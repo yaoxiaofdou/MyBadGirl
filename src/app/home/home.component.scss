@@ -13,17 +13,20 @@
     top:0;
     left:0;
     z-index:10;
-    transition:0.5s;
+    transition:0.4s;
 
     .homeSection{
         $home-bg:#4072af;
         width:100%;
+        height:auto;
+        padding:0;
         background-color:$home-bg;
-        padding:0 15px;
-
         .home__headerNav{
-            $headerNav-height:4.24em;
+            $headerNav-height:4.4em;
 
+            width: 100%;
+            padding:0 15px;
+            background-color:$home-bg;
             height:$headerNav-height;
             text-align:center;
             color:#fff;
@@ -31,31 +34,155 @@
             .headerNav__menu{
                 display:inline-block;
                 float:left;
-                font-size: 1.6rem;
+                font-size: 2rem;
                 margin-top: 2px;
             }
             h3{
                 display:inline-block;
-                line-height:3.5rem;
+                line-height:2.4em;
+                font-size:2em;
                 i{
-                    font-size: 1.5rem;
+                    font-size: 1em;
                 }
             }
             .headerNav__user{
                 display:inline-block;
                 float:right;
-                font-size: 1.7rem;
+                font-size: 2.2rem;
             }
         }
     }
 
 }
 .homeAsideNav{
-    width:24em;
+    width: 25.6em;
     height:100%;
     position:fixed;
     top:0;
     left:0;
     z-index:9;
     background-color:#252130;
+    color:#fff;
+    .asidenav__header{
+        text-align: center;
+        .av_face{
+            $face-width:10em;
+
+            display:inline-block;
+            width:$face-width;
+            height:$face-width;
+            border-radius:50%;
+            overflow:hidden;
+            box-shadow: 0 0 0.2em 0.2em #fff;
+            margin: 6.16em 0 1.66em 0;
+            img{
+                width:100%;
+                height:100%;    
+            }
+        }
+        h3{
+            color:#c4cbe6;
+        }
+        .user__info{
+            width:100%;
+            color:#c4cbe6;
+            font-size:0;
+            div{
+                display:inline-table;
+                width:30%;
+                p{
+                    font-size:1rem;
+                    color:#696f8d;
+                    margin:0.7em 0 0.41em 0;
+                }
+                h3{
+                    font-size: 3rem;
+                }
+            }
+            .user__infoJoin{
+                margin-left:20%;
+            }
+            .user__infoEdit{
+                margin-right:20%;
+            }
+        }
+        .av__Abtn{
+            margin-top:0.8em;
+            width:100%;
+            .av__AbtnDiv{
+                $av-height:5.33rem;
+
+                width:100%;
+                height:$av-height;
+                line-height:$av-height;
+                font-size:1.6rem;
+                text-align:left;
+                padding-left:2em;
+                color:#edeeed;
+                border-top:1px solid #393c66;
+                i{
+                    font-size: 2.5rem;
+                    vertical-align: middle;
+                    margin-right:1rem;
+                }
+                &:before{
+                    content:'';
+                    width:0.4em;
+                    height:100%;
+                    position:absolute;
+                    top:0;
+                    left:0;
+                }
+                &:last-child{
+                    border-bottom:1px solid #393c66;
+                }
+            }
+            .av__Abtn__dekaron{
+                position:relative;
+            }
+            .av__Abtn__dekaron--isActive{
+                background-color:#1e1c32;
+                &:before{
+                    background-color:#aa7bd7;
+                }
+                i{
+                    color:#aa7bd7;
+                }
+            }
+            .av__Abtn__plans{
+                position:relative;
+            }
+            .av__Abtn__plans--isActive{
+                background-color:#1e1c32;
+                &:before{
+                    background-color:#49bdcf;
+                }
+                i{
+                    color:#49bdcf;
+                }
+            }
+            .av__Abtn__results{
+                position:relative;
+            }
+            .av__Abtn__results--isActive{
+                background-color:#1e1c32;
+                &:before{
+                    background-color:#a4d371;
+                }
+                i{
+                    color:#a4d371;
+                }
+            }
+        }
+        .av_signOut{
+            margin-top:8em;
+            font-size: 1rem;
+            text-align: left;
+            padding-left: 3rem;
+            i{
+                font-size: 2em;
+                margin-right:0.5em;
+            }
+        }
+    }
 }
