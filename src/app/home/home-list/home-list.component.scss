@@ -1,0 +1,75 @@
+/*
+*   create by xiaofeng.yao
+*   time 2017.04.19
+*   app/home-list.component
+*/
+.homelist{
+    width: 100%;
+    $listli-height:15em;
+
+    .homelist__li{
+        width:100%;
+        height:$listli-height;
+        position:relative;
+        color:#fff;
+
+        .homelist__liMask{
+            width:100%;
+            height:$listli-height;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+        }
+        .homelist__liContent{
+            width:100%;
+            padding:15px;
+            height:$listli-height;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:2;
+            .homelist__Header{
+                h4{
+                    display:inline-block;
+                    $tt-width:2.6rem;
+                    vertical-align: middle;
+                    font-size: 1.6em;
+                    span{
+                        display:inline-block;
+                        width:$tt-width;
+                        height:$tt-width;
+                        border-radius:50%;
+                        font-size:1.7rem;
+                        text-align: center;
+                        line-height:$tt-width+0.2;
+                        background-color:#fff;
+                        color:#4072af;
+                        font-weight: 100;
+                        margin-right: 0.5rem;
+                        vertical-align: middle;
+                    }
+                }
+                .homelist__HeaderAbtn{
+                    padding:0.1rem 1.5rem;
+                    text-align: center;
+                    background-color: #fff;
+                    border-radius: 3rem;
+                    float: right;
+                    font-size: 2em;
+                }
+            }
+            .homelist__content{
+                text-align: center;
+                h3{
+                    margin-top:0.5em;
+                    font-size: 2.2em;
+                }
+                p{
+                    margin:1.5em 0 0 0;
+                    font-size: 1.05em;
+                }
+            }
+        }
+    }
+}

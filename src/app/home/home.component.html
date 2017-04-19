@@ -1,0 +1,20 @@
+<!-- src/home/home.component.html -->
+<div class="home" [ngClass]="{'home--isActive':mybadgirl.isMenu}">
+  <div class="homeSection">
+    <!-- home header nav -->
+    <div class="home__headerNav">
+      <i class="iconfont icon-menu headerNav__menu" (click)="showHomeMenu();"></i>
+      <h3 class="cssa25592c5f177a3">All<i class="iconfont icon-xia"></i></h3>
+      <i class="iconfont icon-user headerNav__user"></i>
+    </div>
+  </div>
+
+  <!-- home-list -->
+  <app-home-list></app-home-list>
+
+</div>
+
+<!-- home aside nav -->
+<div class="homeAsideNav">
+  
+</div>

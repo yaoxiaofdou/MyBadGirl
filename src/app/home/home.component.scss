@@ -1,0 +1,61 @@
+/*
+*   create by xiaofeng.yao
+*   time 2017.04.19
+*   app/home.component
+*/
+.home--isActive{
+    transform:translateX(24em) scale(0.9);
+}
+
+.home{
+    width:100%;
+    position:relative;
+    top:0;
+    left:0;
+    z-index:10;
+    transition:0.5s;
+
+    .homeSection{
+        $home-bg:#4072af;
+        width:100%;
+        background-color:$home-bg;
+        padding:0 15px;
+
+        .home__headerNav{
+            $headerNav-height:4.24em;
+
+            height:$headerNav-height;
+            text-align:center;
+            color:#fff;
+            line-height:$headerNav-height;
+            .headerNav__menu{
+                display:inline-block;
+                float:left;
+                font-size: 1.6rem;
+                margin-top: 2px;
+            }
+            h3{
+                display:inline-block;
+                line-height:3.5rem;
+                i{
+                    font-size: 1.5rem;
+                }
+            }
+            .headerNav__user{
+                display:inline-block;
+                float:right;
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+}
+.homeAsideNav{
+    width:24em;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:9;
+    background-color:#252130;
+}
