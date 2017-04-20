@@ -30,7 +30,6 @@ export class HomeListComponent implements OnInit {
   // 跳转详情页
   hrefDetailsFun(li){
     this.router.navigate(['/detail',li['id']]);
-    console.log(li)
   }
 
 }

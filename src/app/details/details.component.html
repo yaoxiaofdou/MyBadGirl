@@ -1,3 +1,20 @@
-<p>
-  details works!
-</p>
+<!-- list detail msk -->
+<div class="LDetails--mask" style="background:url('src/images/1.png') no-repeat;background-size:cover;"></div>
+<!-- list detail -->
+<div class="LDetails">
+  <div class="LDetails__header" [ngStyle]="{'background-color':'rgba(' + activity.color + ',1)'}">
+    <!-- 返回首页 -->
+    <i class="iconfont icon-shiliangzhinengduixiang4" [routerLink]="['/home']"></i>
+  </div>
+
+  <!-- 任务详情，图片和任务名 -->
+  <div class="LDetails__task">
+    <div class="LDetails__taskName" style="background:url(src/images/1.png)no-repeat center center;">
+      <div class="task__mask" [ngStyle]="{'background-color':'rgba(' + activity.color + ',0.3)'}"></div>
+      <div class="task__name" [ngStyle]="{'background-color':'rgba(' + activity.color + ',0.6)'}">
+        {{ activity.name }}
+      </div>
+    </div>
+  </div>
+
+</div>

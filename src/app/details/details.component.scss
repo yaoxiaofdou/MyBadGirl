@@ -1,0 +1,81 @@
+/*
+*   create by xiaofeng.yao
+*   time 2017.4.20
+*   details.html
+*/
+.LDetails--mask{
+    width:100%;
+    height:100%;
+    filter: blur(40px); 
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+.LDetails{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:2;
+    .LDetails__header{
+        height: 4.4em;
+        line-height:4.4em;
+        padding-left:1em;
+        i{
+            font-size: 2em;
+            color: #fff;
+        }
+    }
+    .LDetails__task{
+        .LDetails__taskName{
+            $Name-width:12rem;
+
+            width:100%;
+            height: 20rem;
+            text-align: center;
+            position:relative;
+            .task__mask{
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0;
+                z-index:1;
+            }
+            .task__name{
+                display:inline-block;
+                font-size:2rem;
+                width:$Name-width;
+                height:$Name-width;
+                border-radius:50%;
+                color:#fff;
+                box-shadow:0 0 0.5rem 0.5rem #eee;
+                position:absolute;
+                top:0;
+                bottom:0;
+                left: 0;
+                right: 0;
+                margin:auto;
+                z-index:2;
+                animation:taskname 0.7s;
+            }
+            @keyframes taskname{
+                0%{
+                    box-shadow:0 0 0rem 0rem #000;
+                    border-radius:0;
+                    width:100%;
+                    height:100%;
+                    line-height:100%;
+                }
+                100%{
+                    box-shadow:0 0 0.5rem 0.5rem #eee;
+                    width:$Name-width;
+                    height:$Name-width;
+                    border-radius:50%;
+                }
+            }
+        }
+    }
+}

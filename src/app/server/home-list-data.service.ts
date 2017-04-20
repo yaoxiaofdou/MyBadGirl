@@ -34,7 +34,6 @@ export class HomeListDataService {
   private HomeListDetailRG:Array<Object> = [
     { 
       id:'0001',
-      target:'每日完成5公里日常训练，坚持打卡。',
       rule:'1:跑步结束后咕咚公里数配速截图。2:训练中休息不能超过10次。3:训练中不能吃东西。4：配速要求超过 9min/KM。5:不能骑自行车。'
     },
     {
@@ -46,7 +45,7 @@ export class HomeListDataService {
   // 主页列表-详情数据(动态)
   private HomeListDetailD:Array<Object> = [
     {
-      taskId:'0001',
+      id:'0001',
       list:[
         {
           id:'10240001',
@@ -115,5 +114,37 @@ export class HomeListDataService {
     return this.HomeListData
   }
 
+  // 获取当前活动详情
+  getDetail(obj){
+    // 保存数组；过滤出属于当前活动的信息
+    let detail = {};
+    // 主页列表-详情数据(任务，规则)
+    this.HomeListData.forEach((item,index)=>{
+      if(item['id']==obj.id){
+        detail = item;
+      }
+    });
+    // 主页列表-详情数据(任务，规则)
+    this.HomeListDetailRG.forEach((item,index)=>{
+      if(item['id']==obj.id){
+        detail['rule'] = item['rule'];
+      }
+    });
+    // 主页列表-详情数据(动态)
+    this.HomeListDetailD.forEach((item,index)=>{
+      if(item['id']==obj.id){
+        detail['list'] = item['list'];
+      }
+    });
+    // 主页列表-详情数据(排行)
+    this.HomeListDetailP.forEach((item,index)=>{
+      if(item['id']==obj.id){
+        detail['Ranking'] = item['Ranking'];
+      }
+    });
+    
+    // 返回组装好的活动数据
+    return detail
+  }
 
 }
