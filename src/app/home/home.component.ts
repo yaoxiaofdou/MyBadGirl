@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
     // console.log(document.body.clientHeight)
   }
 
+  // menu 显示隐藏
   showHomeMenu(){
     this.mybadgirl['isMenu'] = !this.mybadgirl['isMenu']
   }

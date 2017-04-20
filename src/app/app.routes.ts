@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 
+// 首页
 import { HomeComponent } from './home/home.component';
 
-const routes:Routes = [
+// 详情页
+import { DetailsComponent } from './details/details.component';
+
+export const appRoutes:Routes = [
     {
         path: '',
         redirectTo: 'home',
@@ -12,15 +16,11 @@ const routes:Routes = [
         path: 'home',
         component: HomeComponent
     },{
+        path: 'detail/:id',
+        component: DetailsComponent
+    },{
         path: '**',
         component: HomeComponent
     }
     
 ]
-
-@NgModule({
-    imports:[ RouterModule.forRoot(routes) ],
-    exports:[ RouterModule ]
-})
-
-export class AppRouterModule {}

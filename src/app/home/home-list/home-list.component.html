@@ -1,67 +1,20 @@
 <div class="homelist">
-  <div class="homelist__li">
-    <div class="homelist__liMask" style="background:url(src/images/1.png) center center;background-size:cover;background-position: center center;"></div>
-    <div class="homelist__liContent" style="background-color:rgba(64,114,175,0.5);">
+  <div class="homelist__li" *ngFor="let homeLi of listData;let i = index;" (click)="hrefDetailsFun(homeLi);">
+    <div class="homelist__liMask">
+      <img [src]="homeLi.images" alt="活动图片" />
+    </div>
+    <div class="homelist__liContent" [ngStyle]="{'background-color':'rgba(' + homeLi.color + ',0.5)'}">
       <div class="homelist__Header">
-        <h4 class="cssa25592c5f177a3"><span>任</span>xiaofeng.yao</h4>
-        <a class="homelist__HeaderAbtn cssa25592c5f177a3" style="background:linear-gradient(90deg, rgba(64,114,175,1), rgba(64,114,175,0.2));">follow</a>
+        <h4 class="cssa25592c5f177a3"><span>{{ homeLi.cls }}</span>{{ homeLi.user }}</h4>
+        <a class="homelist__HeaderAbtn cssa25592c5f177a3" 
+           [ngStyle]="{'background':'linear-gradient(90deg,rgba('+homeLi.color+',1),rgba('+homeLi.color+',0.2))'}">
+           follow
+        </a>
       </div>
       <div class="homelist__content">
-        <h3>湖边跑步</h3>
-        <p>目标：每日完成5公里日常训练，坚持打卡。</p>
+        <h3>{{ homeLi.name }}</h3>
+        <p>{{ homeLi.target }}</p>
       </div>
     </div>
-  </div> 
-  <div class="homelist__li">
-    <div class="homelist__liMask" style="background:url(src/images/1.png);background-size:cover;"></div>
-    <div class="homelist__liContent" style="background-color:rgba(64,114,175,0.5);">
-      <div class="homelist__Header">
-        <h4 class="cssa25592c5f177a3"><span>任</span>xiaofeng.yao</h4>
-        <a class="homelist__HeaderAbtn cssa25592c5f177a3" style="background:linear-gradient(90deg, rgba(64,114,175,1), rgba(64,114,175,0.2));">follow</a>
-      </div>
-      <div class="homelist__content">
-        <h3>湖边跑步</h3>
-        <p>目标：每日完成5公里日常训练，坚持打卡。</p>
-      </div>
-    </div>
-  </div> 
-  <div class="homelist__li">
-    <div class="homelist__liMask" style="background:url(src/images/1.png);background-size:cover;"></div>
-    <div class="homelist__liContent" style="background-color:rgba(64,114,175,0.5);">
-      <div class="homelist__Header">
-        <h4 class="cssa25592c5f177a3"><span>任</span>xiaofeng.yao</h4>
-        <a class="homelist__HeaderAbtn cssa25592c5f177a3" style="background:linear-gradient(90deg, rgba(64,114,175,1), rgba(64,114,175,0.2));">follow</a>
-      </div>
-      <div class="homelist__content">
-        <h3>湖边跑步</h3>
-        <p>目标：每日完成5公里日常训练，坚持打卡。</p>
-      </div>
-    </div>
-  </div> 
-  <div class="homelist__li">
-    <div class="homelist__liMask" style="background:url(src/images/1.png);background-size:cover;"></div>
-    <div class="homelist__liContent" style="background-color:rgba(64,114,175,0.5);">
-      <div class="homelist__Header">
-        <h4 class="cssa25592c5f177a3"><span>任</span>xiaofeng.yao</h4>
-        <a class="homelist__HeaderAbtn cssa25592c5f177a3" style="background:linear-gradient(90deg, rgba(64,114,175,1), rgba(64,114,175,0.2));">follow</a>
-      </div>
-      <div class="homelist__content">
-        <h3>湖边跑步</h3>
-        <p>目标：每日完成5公里日常训练，坚持打卡。</p>
-      </div>
-    </div>
-  </div> 
-  <div class="homelist__li">
-    <div class="homelist__liMask" style="background:url(src/images/1.png);background-size:cover;"></div>
-    <div class="homelist__liContent" style="background-color:rgba(64,114,175,0.5);">
-      <div class="homelist__Header">
-        <h4 class="cssa25592c5f177a3"><span>任</span>xiaofeng.yao</h4>
-        <a class="homelist__HeaderAbtn cssa25592c5f177a3" style="background:linear-gradient(90deg, rgba(64,114,175,1), rgba(64,114,175,0.2));">follow</a>
-      </div>
-      <div class="homelist__content">
-        <h3>湖边跑步</h3>
-        <p>目标：每日完成5公里日常训练，坚持打卡。</p>
-      </div>
-    </div>
-  </div> 
+  </div>
 </div>

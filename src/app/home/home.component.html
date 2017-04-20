@@ -3,55 +3,13 @@
   <div class="homeSection">
     <!-- home header nav -->
     <div class="home__headerNav">
-      <i class="iconfont icon-menu headerNav__menu" (click)="showHomeMenu();"></i>
+      <i  class="iconfont headerNav__menu" [ngClass]="{'icon-menu':!mybadgirl.isMenu,'icon-shiliangzhinengduixiang4':mybadgirl.isMenu}" (click)="showHomeMenu();"></i>
       <h3 class="cssa25592c5f177a3">All<i class="iconfont icon-xia"></i></h3>
       <i class="iconfont icon-user headerNav__user"></i>
     </div>
-
     <!-- home-list -->
     <app-home-list></app-home-list>
-
   </div>
-
 </div>
-
 <!-- home aside nav -->
-<div class="homeAsideNav">
-  <div class="asidenav__header">
-    <!-- face -->
-    <div class="av_face">
-      <img src="src/images/1.png" alt="face"/>
-    </div>
-    <h3 class="cssa25592c5f177a3">xiaofeng.yao</h3>
-    <div class="user__info">
-      <div class="user__infoJoin">
-        <p>参加</p>
-        <h3 class="cssa25592c5f177a3">22</h3>
-      </div>
-      <div class="user__infoEdit">
-        <p>发布</p>
-        <h3 class="cssa25592c5f177a3">11</h3>
-      </div>
-    </div>
-    <!-- 导航链接 -->
-    <div class="av__Abtn">
-      <div class="av__AbtnDiv av__Abtn__dekaron av__Abtn__dekaron--isActive">
-        <i class="iconfont icon-wodeyuezhan01"></i>
-        挑战
-      </div>
-      <div class="av__AbtnDiv av__Abtn__plans av__Abtn__plans--isActive">
-        <i class="iconfont icon-jihua"></i>
-        计划
-      </div>
-      <div class="av__AbtnDiv av__Abtn__results av__Abtn__results--isActive">
-        <i class="iconfont icon-price"></i>
-        成果
-      </div>
-    </div>
-    <div class="av_signOut cssa25592c5f177a3">
-      <i class="iconfont icon-shiliangzhinengduixiang4"></i>
-      Sign Out
-    </div>
-
-  </div>
-</div>
+<app-home-asidenav></app-home-asidenav>
