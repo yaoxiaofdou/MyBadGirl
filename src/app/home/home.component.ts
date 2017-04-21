@@ -15,10 +15,10 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // 设置页面高度
+    // 设置list高度
     this.setListHeight();  
   }
-
+  // 设置list高度
   setListHeight(){
     let height = document.body.clientHeight-50;
     document.querySelector('.homelist').setAttribute('style','height:'+height+'px;overflow-y:scroll;');

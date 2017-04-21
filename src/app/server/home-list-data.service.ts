@@ -34,12 +34,12 @@ export class HomeListDataService {
   private HomeListDetailRG:Array<Object> = [
     { 
       id:'0001',
-      rule:'1:跑步结束后咕咚公里数配速截图。2:训练中休息不能超过10次。3:训练中不能吃东西。4：配速要求超过 9min/KM。5:不能骑自行车。'
+      rule:['1:跑步结束后咕咚公里数配速截图。','2:训练中休息不能超过10次。','3:训练中不能吃东西。','4：配速要求超过 9min/KM。','5:不能骑自行车。']
     },
     {
       id:'0002',
       target:'2017年5月1日，五缘湾音乐广场人肉烧烤，欢迎大家参加，费用每人40RMB。',
-      rule:'1:请来宾在入场时交联谊费，谢谢合作,基本费用可以看，什么都不能做。2:需要特殊服务的，额外交取500RMB。仅仅只是拉拉手，亲亲的，额外多交200RMB.',
+      rule:['1:请来宾在入场时交联谊费，谢谢合作,基本费用可以看，什么都不能做。','2:需要特殊服务的，额外交取500RMB。','3:仅仅只是拉拉手，亲亲的，额外多交200RMB.']
     },
   ];
   // 主页列表-详情数据(动态)
@@ -133,8 +133,8 @@ export class HomeListDataService {
     // 主页列表-详情数据(动态)
     this.HomeListDetailD.forEach((item,index)=>{
       if(item['id']==obj.id){
-        detail['list'] = item['list'];
-      }
+                                                                                                                                                      detail['list'] = item['list'];
+      }  2
     });
     // 主页列表-详情数据(排行)
     this.HomeListDetailP.forEach((item,index)=>{

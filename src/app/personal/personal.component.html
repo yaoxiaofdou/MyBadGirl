@@ -1,0 +1,133 @@
+<!-- app/personal/personal.html -->
+<div class="Personal">
+  <div class="Personal__header">
+    <!-- 返回首页 -->
+    <i class="iconfont icon-shiliangzhinengduixiang4 Personal__back" [routerLink]="['/home']"></i>
+    <!-- 编辑页跳转 -->
+    <i class="iconfont icon-fabu1 Personal__edit" [routerLink]="['/home']"></i>
+  </div>
+
+  <div class="Personal__content">
+    <!-- face name -->
+    <div class="Personal__CFName">
+      <!-- cfname mask -->
+      <div class="Personal__CFName__mask" [ngStyle]="{'background':'url(src/images/1.png)no-repeat center center','filter':'blur(20px)'}"></div>
+      <!-- join -->
+      <div class="Personal__CFName__join">
+        <p>参加</p>
+        <h5 class="cssa25592c5f177a3">22</h5>
+      </div>
+      <!-- face -->
+      <div class="Personal__CFName__face">
+        <img src="src/images/1.png" alt="face"/>
+      </div>
+      <!-- edit -->
+      <div class="Personal__CFName__edit">
+        <p>发布</p>
+        <h5 class="cssa25592c5f177a3">11</h5>
+      </div>
+      <h3 class="cssa25592c5f177a3">xiaofeng.yao</h3>
+    </div>
+
+      <!-- 个人中心， 1.参加的活动或挑战  2.过期的活动  3.加入活动时间轴  tab -->
+      <!-- 获取的任务列表要根据当前时间去过滤一次，区分任务是否已经过期 -->
+      <div class="Personal__ctab">
+        <!-- tab title -->
+        <div class="ctab_title">
+          <div class="ctab_title1" [ngClass]="{'ctab--isActive':tab.isActive}" *ngFor="let tab of perTab;let i = index;" (click)="tabChange(tab);">
+            {{ tab.name }}
+          </div>
+        </div>
+        <!-- tab content -->
+        <div class="ctab_content">
+          <div class="ctab_title1__c" *ngIf="tabNumber==0">
+            <!-- 加入的，还在进行中的活动 -->
+            <div class="LDetails__list">
+              <!-- 活动li -->
+              <div class="LDetails__li">
+                <!-- 活动背景 -->
+                <div class="LDetails__liMask">
+                  <img src="src/images/1.png" alt="img"/>
+                </div>
+                <!-- 活动内容 -->
+                <div class="LDetails__liContent">
+                  <h3 class="LDetails__liContent__h">湖边跑步</h3>
+                  <p class="LDetails__liContent__target">每日完成5公里日常训练吗，坚持打卡。</p>
+                  <p class="LDetails__liContent__user"><i class="iconfont icon-fabu"></i>xiaofeng.yao</p>
+                  <p class="LDetails__liContent__btn">
+                    <a class="liContent__btn__see"><i class="iconfont icon-chakan"></i>查看</a>
+                    <a class="liContent__btn__giveup"><i class="iconfont icon-shiliangzhinengduixiang4"></i>放弃</a>
+                  </p>
+                  <span class="LDetails__liContent__icon">任</span>
+                </div>
+              </div>
+              <div class="LDetails__li">
+                <!-- 活动背景 -->
+                <div class="LDetails__liMask">
+                  <img src="src/images/1.png" alt="img"/>
+                </div>
+                <!-- 活动内容 -->
+                <div class="LDetails__liContent">
+                  <h3 class="LDetails__liContent__h">湖边跑步</h3>
+                  <p class="LDetails__liContent__target">每日完成5公里日常训练吗，坚持打卡。</p>
+                  <p class="LDetails__liContent__user"><i class="iconfont icon-fabu"></i>xiaofeng.yao</p>
+                  <p class="LDetails__liContent__btn">
+                    <a class="liContent__btn__see"><i class="iconfont icon-chakan"></i>查看</a>
+                    <a class="liContent__btn__giveup"><i class="iconfont icon-shiliangzhinengduixiang4"></i>放弃</a>
+                  </p>
+                  <span class="LDetails__liContent__icon">任</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="ctab_title2__c" *ngIf="tabNumber==1">
+            <!-- 加入的，还在进行中的活动 -->
+            <div class="LDetails__list">
+              <!-- 活动li -->
+              <div class="LDetails__li">
+                <!-- 活动背景 -->
+                <div class="LDetails__liMask">
+                  <img src="src/images/1.png" alt="img"/>
+                </div>
+                <!-- 活动内容 -->
+                <div class="LDetails__liContent">
+                  <h3 class="LDetails__liContent__h">湖边跑步</h3>
+                  <p class="LDetails__liContent__target">每日完成5公里日常训练吗，坚持打卡。</p>
+                  <p class="LDetails__liContent__user"><i class="iconfont icon-fabu"></i>xiaofeng.yao</p>
+                  <p class="LDetails__liContent__btn">
+                    <a class="liContent__btn__see"><i class="iconfont icon-chakan"></i>查看</a>
+                    <a class="liContent__btn__giveup"><i class="iconfont icon-shiliangzhinengduixiang4"></i>放弃</a>
+                  </p>
+                  <span class="LDetails__liContent__icon">任</span>
+                </div>
+              </div>
+              <div class="LDetails__li">
+                <!-- 活动背景 -->
+                <div class="LDetails__liMask">
+                  <img src="src/images/1.png" alt="img"/>
+                </div>
+                <!-- 活动内容 -->
+                <div class="LDetails__liContent">
+                  <h3 class="LDetails__liContent__h">湖边跑步</h3>
+                  <p class="LDetails__liContent__target">每日完成5公里日常训练吗，坚持打卡。</p>
+                  <p class="LDetails__liContent__user"><i class="iconfont icon-fabu"></i>xiaofeng.yao</p>
+                  <p class="LDetails__liContent__btn">
+                    <a class="liContent__btn__see"><i class="iconfont icon-chakan"></i>查看</a>
+                    <a class="liContent__btn__giveup"><i class="iconfont icon-shiliangzhinengduixiang4"></i>放弃</a>
+                  </p>
+                  <span class="LDetails__liContent__icon">任</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="ctab_title3__c" *ngIf="tabNumber==2">
+            时间轴
+          </div>
+        </div>
+
+      </div>
+  </div>
+</div>  
+

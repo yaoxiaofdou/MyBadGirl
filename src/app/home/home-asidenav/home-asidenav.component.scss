@@ -16,7 +16,7 @@
         color:#fff;
         text-align: center;
         .av_face{
-            $face-width:10em;
+            $face-width:8em;
 
             display:inline-block;
             width:$face-width;
@@ -24,7 +24,7 @@
             border-radius:50%;
             overflow:hidden;
             box-shadow: 0 0 0.2em 0.2em #fff;
-            margin: 6.16em 0 1.66em 0;
+            margin: 10% 0 4% 0;
             img{
                 width:100%;
                 height:100%;    
@@ -57,14 +57,13 @@
             }
         }
         .av__Abtn{
-            margin-top:0.8em;
+            margin-top:1%;
             width:100%;
             .av__AbtnDiv{
                 $av-height:5.33rem;
 
                 width:100%;
-                height:$av-height;
-                line-height:$av-height;
+                padding: 0.5rem 0 0.3rem 0;
                 font-size:1.6rem;
                 text-align:left;
                 padding-left:2em;
@@ -125,7 +124,7 @@
             }
         }
         .av_signOut{
-            margin-top:8em;
+            margin-top: 7%;
             font-size: 1rem;
             text-align: left;
             padding-left: 3rem;

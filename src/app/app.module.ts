@@ -20,6 +20,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeListDataService } from './server/home-list-data.service';
 import { UserService } from './server/user.service';
 import { DetailsComponent } from './details/details.component';
+import { PersonalComponent } from './personal/personal.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { DetailsComponent } from './details/details.component';
     HomeComponent,
     HomeListComponent,
     HomeAsidenavComponent,
-    DetailsComponent
+    DetailsComponent,
+    PersonalComponent
   ],
   providers: [HomeListDataService,UserService],
   bootstrap: [AppComponent]
