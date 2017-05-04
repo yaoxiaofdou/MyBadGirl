@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalComponent implements OnInit {
 
+  // 头部样式
+  private headerCls:Boolean = false;
+
   // tab
   private perTab:Array<Object> = [
     {
@@ -38,10 +41,21 @@ export class PersonalComponent implements OnInit {
 
   // 设置list高度
   setListHeight(){
-    let height = document.body.clientHeight-(52+198+15);
+    let height = document.body.clientHeight-(52+148);
     // LDetails__list
     document.querySelector('.ctab_content').setAttribute('style','height:'+height+'px;overflow-y:scroll;');
-    console.log(document.body.clientHeight)
+    // console.log(document.body.clientHeight)
+    
+  }
+
+  // 监听滚动事件，给头部绑定动态样式
+  ctabScrollFun(e){
+    let top = e.srcElement.scrollTop;
+    if(top > 0){
+      this.headerCls = true;
+      return false;
+    }
+    this.headerCls = false;
   }
 
   // tab切换

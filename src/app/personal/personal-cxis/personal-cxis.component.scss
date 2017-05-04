@@ -1,0 +1,106 @@
+/*
+*   create by xiaofeng.yao
+*   time 2017.05.04
+*   personal-cxis.html
+*/
+.Personal__cxis{
+    width:100%;
+    text-align:center;
+    position:relative;
+    padding-top:1rem;
+    .Personal__cxis__Mask{
+        width:100%;
+        height:100%;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index:1;
+    }
+    .Personal__cxis__content{
+        position:relative;
+        z-index:2;
+        .Personal__cxisPanel{
+            width:100%;
+            position:relative;
+            .Personal__cxisli{
+                width: 50%;
+                text-align: right;
+                padding: 10px 20px 10px 10px;
+                position:relative;
+                h3{
+                    //color:#fff;
+                }
+                h5{
+                    //color:#fff;
+                }
+                p{
+                    //color:#fff;
+                }
+                &:before{
+                    content: '';
+                    width: 1rem;
+                    height: 1rem;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right:-0.5rem;
+                    margin: auto;
+                    z-index:1;
+                    border-radius: 50%;
+                    background-color: #999;
+                    animation:radiusAnima 2s infinite;
+                }
+                @keyframes radiusAnima{
+                    0%  {width: 1rem;height: 1rem;right:-0.5rem;background-color: #999;}
+                    100% {width: 2rem;height: 2rem;right:-1rem;background-color: #fff;}
+                }
+                &:after{
+                    content: '';
+                    width: 1rem;
+                    height: 1rem;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right:-0.5rem;
+                    margin: auto;
+                    z-index:2;
+                    border-radius: 50%;
+                    background-color: #999;
+                }
+            }
+            &:nth-child(2n){
+                width:100%;
+                position:relative;
+                .Personal__cxisli{
+                    width:50%;
+                    text-align: left;
+                    padding: 10px 10px 10px 20px;
+                    position: relative;
+                    left: 50%;
+                    &:after{
+                        right:inherit;
+                        left: -0.5rem;
+                    }
+                    &:before{
+                        content: '';
+                        width: 1rem;
+                        height: 1rem;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left:-16rem;
+                        margin: auto;
+                        border-radius: 50%;
+                        background-color: #999;
+                        animation:radiusTwoAnima 2s infinite 0.5s;
+                    }
+                    @keyframes radiusTwoAnima{ 
+                        0%  {width: 1rem;height: 1rem;left:-15rem;background-color: #999;}
+                        100% {width: 2rem;height: 2rem;left:-15rem;background-color: #fff;}
+                    }
+                }
+            }
+        }
+    }
+
+}
