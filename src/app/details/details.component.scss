@@ -26,7 +26,10 @@
         height: 4.4rem;
         line-height:4.4rem;
         padding-left:1rem;
-        background-color: #4072af;
+        background-color: #262336;
+        position: relative;
+        z-index: 9;
+
         i{
             font-size: 2rem;
             color: #fff;
@@ -109,15 +112,15 @@
         text-align: center;
         a{
             display:inline-block;
-            border:1px solid #fff;
+            border:1px solid #262336;
             padding: 0.1rem 8rem;
-            color: #fff;
+            color: #262336;
             font-size: 1.2rem;
             border-radius: 5px;
             i{
                 font-size: 2.2rem;
                 vertical-align: sub;
-                color: #fff;
+                color: #262336;
                 margin-right: 0.5rem;
             }
         }

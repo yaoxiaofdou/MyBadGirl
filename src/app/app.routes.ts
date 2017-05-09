@@ -8,6 +8,7 @@ import { DetailsComponent } from './details/details.component';
 // 个人中心
 import { PersonalComponent } from './personal/personal.component';
 import { PersonalJoinComponent } from './personal/personal-join/personal-join.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 export const appRoutes:Routes = [
     {
@@ -20,6 +21,9 @@ export const appRoutes:Routes = [
     },{
         path: 'detail/:id',
         component: DetailsComponent
+    },{
+        path: 'UserEdit',
+        component: UserEditComponent
     },{
         path:'personal',
         component: PersonalComponent,

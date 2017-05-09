@@ -1,0 +1,43 @@
+/*
+*   create by xiaofeng.yao
+*   time 2017.05.09
+*   user-edit.component.html
+*/
+.userEdit{
+    .userEdit__header{
+        width: 100%;
+        padding: 0 15px;
+        background-color: #262336;
+        height: 4.4em;
+        text-align: center;
+        color: #fff;
+        line-height: 4.4em;
+        padding:0 15px;
+        position: relative;
+        z-index: 10;
+        i{
+            font-size: 2rem;
+        }
+        .userEdit__back{
+            float: left;
+        }
+        .userEdit__edit{
+            float: right;
+            font-size:1.4rem;
+            color:#fff;
+        }
+    }
+
+    .userEdit__content{
+        padding:2rem;
+        form{
+            label{
+                font-size:1.4rem;
+            }
+            input{
+                font-size:1.4rem;
+            }
+        }
+    }
+
+}

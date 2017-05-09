@@ -1,0 +1,42 @@
+<!-- app/user-edit/user-edit.component.html -->
+<div class="userEdit">
+  <div class="userEdit__header">
+    <!-- 返回首页 -->
+    <i class="iconfont icon-shiliangzhinengduixiang4 userEdit__back" [routerLink]="['/home']"></i>
+    <!-- 编辑页跳转 -->
+    <a class="userEdit__edit" [routerLink]="['/personal']">发布</a>
+  </div>
+
+  <!-- 表单 -->
+  <div class="userEdit__content">
+    <form>
+      <!-- 任务名 -->
+      <div class="form-group">
+        <label for="exampleInputEmail1">任务名</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="输入任务名">
+        <small id="emailHelp" class="form-text text-muted">最好简短点，6个字左右</small>
+      </div>
+      <!-- 任务介绍 -->
+      <div class="form-group">
+        <label for="exampleTextarea">任务介绍</label>
+        <textarea class="form-control" id="exampleTextarea" placeholder="最好不要超过20个字，简单好记" rows="3"></textarea>
+      </div>
+      <!-- 开始时间 获取当前时间 -->
+      <div class="form-group">
+        <label for="exampleInputPassword1">开始时间</label>
+        <h4 style="padding-left:1rem;">2017/05/09</h4>
+      </div>
+      <!-- 结束时间 -->
+      <div class="form-group">
+        <label for="exampleInputPassword1">结束时间</label>
+        <input type="date" class="form-control" id="exampleInputdata" placeholder="2017/05/09">
+      </div>
+      <!-- 任务规则 -->
+      <div class="form-group">
+        <label for="exampleTextarea">任务规则</label>
+        <textarea class="form-control" id="exampleTextarea" placeholder="最好不要超过120个字，简单好记" rows="7"></textarea>
+      </div>
+    </form>
+  </div>
+
+</div>

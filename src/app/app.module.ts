@@ -16,17 +16,25 @@ import { HomeAsidenavComponent } from './home/home-asidenav/home-asidenav.compon
 // ng-bootstrap
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-// server
-import { HomeListDataService } from './server/home-list-data.service';
-import { UserService } from './server/user.service';
+// detail
 import { DetailsComponent } from './details/details.component';
+
+// personal
 import { PersonalComponent } from './personal/personal.component';
 import { PersonalJoinComponent } from './personal/personal-join/personal-join.component';
 import { PersonalReleaseComponent } from './personal/personal-release/personal-release.component';
 import { PersonalCxisComponent } from './personal/personal-cxis/personal-cxis.component';
 
+// user edit
+import { UserEditComponent } from './user-edit/user-edit.component';
+
+// server
+import { HomeListDataService } from './server/home-list-data.service';
+import { UserService } from './server/user.service';
+
 // pipe
 import { HomeListPipe } from './pipes/home-list.pipe';
+
 
 @NgModule({
   imports: [
@@ -46,7 +54,8 @@ import { HomeListPipe } from './pipes/home-list.pipe';
     PersonalJoinComponent,
     PersonalReleaseComponent,
     PersonalCxisComponent,
-    HomeListPipe
+    HomeListPipe,
+    UserEditComponent
   ],
   providers: [HomeListDataService,UserService],
   bootstrap: [AppComponent]

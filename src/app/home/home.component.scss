@@ -14,13 +14,16 @@
     left:0;
     z-index:10;
     transition:0.7s;
+    outline: 1px solid #fff;
 
     .homeSection{
-        $home-bg:#4072af;
+        $home-bg:#262336;
+
         width:100%;
         height:auto;
         padding:0;
         background-color:$home-bg;
+        
         .home__headerNav{
             $headerNav-height:4.4em;
 
@@ -63,16 +66,16 @@
             transition:0.7s;
             .home__headerCls__li{
                 display:inline-block;
-                color: #4072af;
+                color: #262336;
                 padding:0.4rem 2rem;
                 margin:0 0.2rem;
                 border-radius: 0.6rem;
-                border:1px solid #4072af;
+                border:1px solid #262336;
                 background-color:#fff;
                 font-size: 1.5rem;
             }
             .home__headerCls__li--isActive{
-                background-color:#4072af;
+                background-color:#262336;
                 color: #fff;
             }
         }

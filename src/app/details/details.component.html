@@ -1,5 +1,5 @@
 <!-- list detail msk -->
-<div class="LDetails--mask" style="background:url('src/images/1.png') no-repeat;background-size:cover;"></div>
+<!--<div class="LDetails--mask" style="background:url('src/images/1.png') no-repeat;background-size:cover;"></div>-->
 <!-- list detail -->
 <div class="LDetails">
   <div class="LDetails__header">
@@ -22,13 +22,13 @@
     <ngb-tabset justify="center">
       <ngb-tab>
         <template ngbTabTitle>
-          <b style="padding: 0.8rem;color: #655f52;font-size: 1.2rem;">任务</b></template>
+          <b style="padding: 0.8rem;color: #262336;font-size: 1.2rem;">任务</b></template>
         <template ngbTabContent>
           {{ activity.target }}
         </template>
       </ngb-tab>
       <ngb-tab>
-        <template ngbTabTitle><b style="padding: 0.8rem;color: #655f52;font-size: 1.2rem;">规则</b></template>
+        <template ngbTabTitle><b style="padding: 0.8rem;color: #262336;font-size: 1.2rem;">规则</b></template>
         <template ngbTabContent>
           <p *ngFor="let ren of activity.rule">
             {{ ren }}
@@ -36,7 +36,7 @@
         </template>
       </ngb-tab>
       <ngb-tab>
-        <template ngbTabTitle><b style="padding: 0.8rem;color: #655f52;font-size: 1.2rem;">动态</b></template>
+        <template ngbTabTitle><b style="padding: 0.8rem;color: #262336;font-size: 1.2rem;">动态</b></template>
         <template ngbTabContent>
           <p *ngFor="let dongt of activity.list;let i = index;">
             <i>{{ i+1 }}</i>
@@ -48,7 +48,7 @@
       </ngb-tab>
       <!-- 任务类型可以有排行，活动类型可以考虑没有排行 -->
       <ngb-tab>
-        <template ngbTabTitle><b style="padding: 0.8rem;color: #655f52;font-size: 1.2rem;">排行</b></template>
+        <template ngbTabTitle><b style="padding: 0.8rem;color: #262336;font-size: 1.2rem;">排行</b></template>
         <template ngbTabContent>
           <p *ngFor="let rank of activity.Ranking;let i = index;">
             <i class="iconfont" [ngClass]="{ 'icon-icon-test':i==0,'icon-icon-test1':i==1,'icon-icon-test2':i==2 }"></i>
