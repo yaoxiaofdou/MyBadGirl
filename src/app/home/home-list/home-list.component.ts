@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HomeListDataService } from '../../server/home-list-data.service';
 import { Router }from'@angular/router';
 
@@ -8,6 +8,9 @@ import { Router }from'@angular/router';
   styleUrls: ['./home-list.component.scss']
 })
 export class HomeListComponent implements OnInit {
+
+  // 定义接收的分类
+  @Input() HomeCls;
 
   // 接收 list 数据
   private listData:Array<Object>;
@@ -20,6 +23,11 @@ export class HomeListComponent implements OnInit {
   ngOnInit() {
     // 获取服务列表数据
     this.getListServerData();
+  }
+  
+  // 当从主页传递过来的分类有变化时调用
+  ngOnChanges(){
+    // console.log('list',this.HomeCls)
   }
 
   // 获取服务列表数据

@@ -4,12 +4,20 @@
     <!-- home header nav -->
     <div class="home__headerNav">
       <i  class="iconfont headerNav__menu" [ngClass]="{'icon-menu':!mybadgirl.isMenu,'icon-shiliangzhinengduixiang4':mybadgirl.isMenu}" (click)="showHomeMenu();"></i>
-      <h3 class="cssa25592c5f177a3">All<i class="iconfont icon-xia"></i></h3>
+      <h3 class="cssa25592c5f177a3" (click)="mybadgirl.isClass = !mybadgirl.isClass;">All<i class="iconfont icon-xia"></i></h3>
       <i class="iconfont icon-user headerNav__user" [routerLink]="['/personal']"></i>
     </div>
+    <!-- 分类 -->
+    <div class="home__headerCls" [ngClass]="{ 'home__headerCls--show':!mybadgirl.isClass }">
+      <div class="home__headerCls__li" *ngFor="let cls of mybadgirl.clsMenu" (click)="setClsIsActive(cls)"
+          [ngClass]="{ 'home__headerCls__li--isActive' : cls.isActive } ">
+        {{ cls.name }}
+      </div>
+    </div>
     <!-- home-list -->
-    <app-home-list></app-home-list>
+    <app-home-list [HomeCls]='homeCls'></app-home-list>
   </div>
 </div>
+
 <!-- home aside nav -->
 <app-home-asidenav></app-home-asidenav>

@@ -28,6 +28,23 @@ export class HomeListDataService {
       color:'92,184,180',
       user:'baichi.rao',
       target:'2017年5月1日，五缘湾音乐广场人肉联谊大赛，欢迎大家参加，费用每人40RMB。'
+    },{ 
+      id:'0003',
+      cls:'任',
+      name:'湖边跑步',
+      images:'src/images/1.png',
+      color:'240,173,78',
+      user:'xiaofeng.yao',
+      target:'每日完成5公里日常训练，坚持打卡。'
+    },
+    { 
+      id:'0004',
+      cls:'活',
+      name:'五缘湾联谊',
+      images:'src/images/1.png',
+      color:'201,48,44',
+      user:'baichi.rao',
+      target:'2017年5月1日，五缘湾音乐广场人肉联谊大赛，欢迎大家参加，费用每人40RMB。'
     },
   ];
   // 主页列表-详情数据(任务，规则)
@@ -107,6 +124,23 @@ export class HomeListDataService {
     }
   ];
 
+  // 分类数据
+  private HomeListClass:Array<Object> = [
+    {
+      id:'R001',
+      name:'ALL',
+      isActive:true
+    },{
+      id:'R002',
+      name:'活',
+      isActive:false
+    },{
+      id:'R003',
+      name:'任',
+      isActive:false
+    }
+  ]
+
   constructor() { }
   
   // 获取首页列表
@@ -145,6 +179,11 @@ export class HomeListDataService {
     
     // 返回组装好的活动数据
     return detail
+  }
+
+  // 获取分类数据
+  getHomeClsData(){
+    return this.HomeListClass
   }
 
 }

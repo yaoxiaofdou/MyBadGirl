@@ -25,6 +25,9 @@ import { PersonalJoinComponent } from './personal/personal-join/personal-join.co
 import { PersonalReleaseComponent } from './personal/personal-release/personal-release.component';
 import { PersonalCxisComponent } from './personal/personal-cxis/personal-cxis.component';
 
+// pipe
+import { HomeListPipe } from './pipes/home-list.pipe';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { PersonalCxisComponent } from './personal/personal-cxis/personal-cxis.co
     PersonalComponent,
     PersonalJoinComponent,
     PersonalReleaseComponent,
-    PersonalCxisComponent
+    PersonalCxisComponent,
+    HomeListPipe
   ],
   providers: [HomeListDataService,UserService],
   bootstrap: [AppComponent]

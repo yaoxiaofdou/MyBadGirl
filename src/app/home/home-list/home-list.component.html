@@ -1,5 +1,5 @@
 <div class="homelist">
-  <div class="homelist__li" *ngFor="let homeLi of listData;let i = index;" (click)="hrefDetailsFun(homeLi);">
+  <div class="homelist__li" *ngFor="let homeLi of listData | listCls : HomeCls ;let i = index;" (click)="hrefDetailsFun(homeLi);">
     <div class="homelist__liMask">
       <img [src]="homeLi.images" alt="活动图片" />
     </div>
