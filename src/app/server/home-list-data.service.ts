@@ -26,7 +26,7 @@ export class HomeListDataService {
       name:'五缘湾联谊',
       images:'src/images/1.png',
       color:'92,184,180',
-      user:'baichi.rao',
+      user:'congcong.rao',
       target:'2017年5月1日，五缘湾音乐广场人肉联谊大赛，欢迎大家参加，费用每人40RMB。'
     },{ 
       id:'0003',
@@ -43,7 +43,7 @@ export class HomeListDataService {
       name:'五缘湾联谊',
       images:'src/images/1.png',
       color:'201,48,44',
-      user:'baichi.rao',
+      user:'congcong.rao',
       target:'2017年5月1日，五缘湾音乐广场人肉联谊大赛，欢迎大家参加，费用每人40RMB。'
     },
   ];
@@ -71,7 +71,7 @@ export class HomeListDataService {
           date:'2017/04/20'
         },{
           id:'10240002',
-          name:'shazi.rao',
+          name:'congcong.rao',
           dynamic:'5KM,配速10.20',
           date:'2017/04/25'
         }
@@ -86,7 +86,7 @@ export class HomeListDataService {
           date:'2017/04/20'
         },{
           id:'10240002',
-          name:'shazi.rao',
+          name:'congcong.rao',
           dynamic:'加入活动',
           date:'2017/04/25'
         }
@@ -104,7 +104,7 @@ export class HomeListDataService {
           sum:20000,
         },{
           id:'10240002',
-          name:'shazi.rao',
+          name:'congcong.rao',
           sum:520,
         }
       ]
@@ -117,7 +117,7 @@ export class HomeListDataService {
           data:'2017/04/20',
         },{
           id:'10240002',
-          name:'shazi.rao',
+          name:'congcong.rao',
           data:'2017/04/25',
         }
       ]

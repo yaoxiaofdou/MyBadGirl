@@ -4,7 +4,14 @@
 *   app/home.component
 */
 .home--isActive{
-    transform:perspective(45em) translateX(21em) rotateY(20deg) scale(0.86);
+    animation:homeAnima 0.7s;
+    // transform:perspective(45em) translateX(21em) rotateY(20deg) scale(0.86);
+    transform:translateX(24em) scale(0.93);
+    @keyframes homeAnima{
+        0%  {transform:translateX(0) scale(1);}
+        40% {transform:translateX(12em) scale(2);}
+        100%{transform:translateX(24em) scale(0.93);}
+    }
 }
 
 .home{

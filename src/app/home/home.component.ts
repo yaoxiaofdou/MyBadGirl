@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     this.mybadgirl['clsMenu'] = this.homeData.getHomeClsData();
   }
 
-  // 设置分类选中 
+  // 设置分类选中
   setClsIsActive(obj){
     this.mybadgirl['clsMenu'].forEach((item,index)=>{
       item['isActive'] = false;
@@ -55,6 +55,8 @@ export class HomeComponent implements OnInit {
 
     //  分类传递给列表
     this.homeCls = obj['name'];
+    //  关闭分类框
+    this.mybadgirl['isClass'] = false;
   }
 
   // menu 显示隐藏
