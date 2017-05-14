@@ -1,0 +1,100 @@
+/*
+*   create by xiaofeng.yao
+*   time 2017.05.13
+*   login.component.html
+*/
+.login{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    overflow:hidden;
+    h1{
+        position: absolute;
+        top:20%;
+        z-index:2;
+        text-align:center;
+        font-size:2.8rem;
+        animation:loginHanima 7s infinite;
+    }
+    @keyframes loginHanima{
+        0%{color:#fff;}
+        25%{color:antiquewhite;}
+        50%{color:darkgoldenrod;}
+        75%{color:yellow;}
+        100%{color:violet;}
+    }
+    .login__mask{
+        position: absolute;
+        z-index:1;
+        width:100%;
+        height:100%;
+        background:url('../../../images/rn.jpg')no-repeat;
+        background-size:cover;
+        filter:blur(10px);
+    }
+    .login__form{
+        width:70%;
+        position: absolute;
+        z-index:2;
+        transition:0.7s;
+        .input-group{
+            margin-top:1rem;
+            span{
+                border: none;
+            }
+            input{
+                border:none;
+            }
+        }
+        p{
+            display: flex;
+            justify-content: space-around;
+            a{
+                margin-top: 1.2rem;
+                font-size: 1.2rem;
+                color: #fff;
+                padding: 0.5rem 1rem;
+                &:nth-child(2){
+                    border: 1px solid #fff;
+                }
+            }
+        }
+    }
+    .login__form--active{
+        transform: translateX(-200%);
+    }
+    .register__form{
+        width:70%;
+        position: absolute;
+        z-index:2;
+        transition:0.7s;
+        .input-group{
+            margin-top:1rem;
+            span{
+                border: none;
+            }
+            input{
+                border:none;
+            }
+        }
+        p{
+            display: flex;
+            justify-content: space-around;
+            a{
+                margin-top: 1.2rem;
+                font-size: 1.2rem;
+                color: #fff;
+                padding: 0.5rem 1rem;
+                &:nth-child(2){
+                    border: 1px solid #fff;
+                }
+            }
+        }
+    }
+    .register__form--active{
+        transform: translateX(200%);
+    }
+}

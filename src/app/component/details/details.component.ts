@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { HomeListDataService } from '../server/home-list-data.service';
+import { HomeListDataService } from '../../server/home-list-data.service';
 
 @Component({
   selector: 'app-details',

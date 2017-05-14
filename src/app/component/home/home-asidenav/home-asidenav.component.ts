@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../server/user.service';
+import { UserService } from '../../../server/user.service';
 
 @Component({
   selector: 'app-home-asidenav',

@@ -1,0 +1,57 @@
+<p>
+  <ngb-alert type="success" [dismissible]="true" (close)="close()">success</ngb-alert>
+</p>
+<!-- 表单 -->
+<div class="login">
+  <div class="login__mask"></div>
+  <h1 class="cssaa6b32f21177a3">MyBadGirl</h1>
+  <!-- 登陆表单 -->
+  <form class="login__form" [ngClass]="{'': login.isActive,'login__form--active' : !login.isActive}">
+    <!-- 用户名 -->
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">
+        <i class="iconfont icon-zhanghu"></i>
+      </span>
+      <input type="text" class="form-control" name="username" [(ngModel)]="login.Uname" placeholder="Username" />
+    </div>
+    <!-- 密码 -->
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">
+        <i class="iconfont icon-unie614" style="font-size: 18px;"></i>
+      </span>
+      <input type="password" class="form-control" name="password" [(ngModel)]="login.pwd" placeholder="Password" />
+    </div>
+    <p>
+      <a (click)="hrefRegister()">注册</a>
+      <a (click)="UserLogin()">登陆</a>
+    </p>
+  </form>
+  <!-- 注册表单 -->
+  <form class="register__form" [ngClass]="{'': !login.isActive,'register__form--active': login.isActive}">
+    <!-- 用户名 -->
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">
+        <i class="iconfont icon-zhanghu"></i>
+      </span>
+      <input type="text" class="form-control" name="newUname" [(ngModel)]="login.newUname" placeholder="Username" aria-describedby="basic-addon1">
+    </div>
+    <!-- 密码 -->
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">
+        <i class="iconfont icon-unie614" style="font-size: 18px;"></i>
+      </span>
+      <input type="password" class="form-control" name="newPwd" [(ngModel)]="login.newPwd" placeholder="Password" aria-describedby="basic-addon1">
+    </div>
+    <!-- 名字 -->
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">
+        <i class="iconfont icon-user" style="font-size: 18px;"></i>
+      </span>
+      <input type="text" class="form-control" name="name" [(ngModel)]="login.name" placeholder="Name" aria-describedby="basic-addon1">
+    </div>
+    <p>
+      <a>重置</a>
+      <a (click)="hrefLogin()">完成</a>
+    </p>
+  </form>
+</div>

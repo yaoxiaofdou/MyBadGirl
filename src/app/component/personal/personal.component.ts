@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../server/user.service';
 
 @Component({
   selector: 'app-personal',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personal.component.scss']
 })
 export class PersonalComponent implements OnInit {
+
+  // 保存当前用户
+  private User:Object;
 
   // 头部样式
   private headerCls:Boolean = false;
@@ -32,11 +36,20 @@ export class PersonalComponent implements OnInit {
   // 当前显示的 tab 页
   private tabNumber:Number = 0;
 
-  constructor() { }
+  constructor(
+    private userService:UserService
+  ) { }
 
   ngOnInit() {
     // 设置list高度
     this.setListHeight();
+    // 获取当前用户数据
+    this.getUser();
+  }
+
+  // 获取当前用户数据
+  getUser(){
+     this.User = this.userService.getThisUser();
   }
 
   // 设置list高度

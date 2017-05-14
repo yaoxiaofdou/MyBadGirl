@@ -15,18 +15,18 @@
       <!-- join -->
       <div class="Personal__CFName__join">
         <p>参加</p>
-        <h5 class="cssa25592c5f177a3">22</h5>
+        <h5 class="cssa25592c5f177a3">{{ User.joinSum }}</h5>
       </div>
       <!-- face -->
       <div class="Personal__CFName__face">
-        <img src="src/images/1.png" alt="face"/>
+        <img [src]="User.img" alt="face"/>
       </div>
       <!-- edit -->
       <div class="Personal__CFName__edit">
         <p>发布</p>
-        <h5 class="cssa25592c5f177a3">11</h5>
+        <h5 class="cssa25592c5f177a3">{{ User.editSum }}</h5>
       </div>
-      <h3 class="Personal__CFName__n cssa25592c5f177a3">xiaofeng.yao</h3>
+      <h3 class="Personal__CFName__n cssa25592c5f177a3">{{ User.name }}</h3>
     </div>
 
     <!-- 个人中心， 1.参加的活动或挑战  2.过期的活动  3.加入活动时间轴  tab -->

@@ -3,7 +3,9 @@ import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
-import { HomeListDataService } from '../server/home-list-data.service';
+import { HomeListDataService } from '../../server/home-list-data.service';
+
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +26,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private http:Http,
-    private homeData:HomeListDataService
+    private homeData:HomeListDataService,
+    private cookieService:CookieService
   ) { }
 
   ngOnInit() {
@@ -34,6 +37,15 @@ export class HomeComponent implements OnInit {
     // 从服务get分类数据
     this.getClassData();
   }
+
+  // 用户刚进入页面的时候需要来一个 登录 判断 cookia 判断
+  // 点击 user 按钮进行登录判断 ，隐藏 menu 图标按钮
+  // 未登录仅显示 （首页，活动详情页）
+  // 登录显示开发全部界面
+  homeVerification(){
+    
+  }
+
   // 设置list高度
   setListHeight(){
     let height = document.body.clientHeight-50;

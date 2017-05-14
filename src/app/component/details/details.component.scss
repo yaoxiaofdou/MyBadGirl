@@ -29,10 +29,23 @@
         background-color: #262336;
         position: relative;
         z-index: 9;
-
         i{
             font-size: 2rem;
             color: #fff;
+            position: relative;
+            z-index:2;
+        }
+        span{
+            display:inline-block;
+            width:100%;
+            position: absolute;
+            top:0;right:0;bottom:0;left:0;
+            margin:auto;
+            z-index:1;
+            text-align: center;
+            color:#fff;
+            overflow:hidden;
+            font-size:1.6rem;
         }
     }
     .LDetails__task{
@@ -54,11 +67,11 @@
             .task__name{
                 display:inline-block;
                 font-size:2rem;
-                width:$Name-width;
-                height:$Name-width;
-                border-radius:50%;
+                //width:$Name-width;
+                //height:$Name-width;
+                //border-radius:50%;
                 color:#fff;
-                box-shadow:0 0 0.5rem 0.5rem #eee;
+                //box-shadow:0 0 0.5rem 0.5rem #eee;
                 position:absolute;
                 top:0;
                 bottom:0;
@@ -66,17 +79,28 @@
                 right: 0;
                 margin:auto;
                 z-index:2;
-                animation:taskname 0.7s;
+                //animation:taskname 0.7s;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                overflow:hidden;
+                //overflow:hidden;
+                text-align: center;
+                i{
+                    font-size: 6rem;
+                    color: #ff7773;
+                    position:absolute;
+                    top:0.3rem;
+                    left:1.3rem;
+                }
                 p{
                     margin:0;
-                    width: 12rem;
-                    word-wrap: break-word;
-                    word-break: break-all;
-                    line-height: normal;
+                    font-size:1.8rem;
+                    span{
+                        font-size: 7rem;
+                        //font-family: fantasy;
+                        position: relative;
+                        top:0.5rem;
+                    }
                 }
             }
             @keyframes taskname{

@@ -2,19 +2,25 @@ import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
 
 // 首页
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './component/home/home.component';
 // 详情页
-import { DetailsComponent } from './details/details.component';
+import { DetailsComponent } from './component/details/details.component';
 // 个人中心
-import { PersonalComponent } from './personal/personal.component';
-import { PersonalJoinComponent } from './personal/personal-join/personal-join.component';
-import { UserEditComponent } from './user-edit/user-edit.component';
+import { PersonalComponent } from './component/personal/personal.component';
+import { PersonalJoinComponent } from './component/personal/personal-join/personal-join.component';
+import { UserEditComponent } from './component/user-edit/user-edit.component';
+
+// login
+import { LoginComponent } from './component/login/login.component';
 
 export const appRoutes:Routes = [
     {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
+    },{
+        path: 'login',
+        component: LoginComponent
     },{
         path: 'home',
         component: HomeComponent

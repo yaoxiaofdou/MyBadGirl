@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HomeListDataService } from '../../server/home-list-data.service';
+import { HomeListDataService } from '../../../server/home-list-data.service';
 import { Router }from'@angular/router';
 
 @Component({
