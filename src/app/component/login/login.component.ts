@@ -1,4 +1,4 @@
-import { Component, OnInit ,NgModule,Input } from '@angular/core';
+import { Component, OnInit ,NgModule } from '@angular/core';
 import { UserService } from '../../server/user.service';
 
 @Component({
@@ -7,9 +7,16 @@ import { UserService } from '../../server/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  @Input()
+
   // 登录页面初始对象
   public login:Object = {};
+
+  // 弹窗类型对象
+  public Girl:Object = {};
+
+  // public alertType:String = 'danger';
+  // public alertContent:String = '输入错误请重新输入';
+  // public AlertisActive:Boolean = false;
 
   constructor(
     private userService:UserService,
@@ -26,6 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
   // 登陆方法
@@ -33,8 +41,21 @@ export class LoginComponent implements OnInit {
     let usr = this.login['Uname'];
     let pwd = this.login['pwd'];
     let loginStatic = this.userService.loginverification(usr,pwd);
-    if(loginStatic){
-      alert()
+    // loginStatic 服务里对登陆信息的验证返回一个含有一个 布尔值 和 用户id 的对象
+    if(loginStatic['static']){
+      // 调用正确弹窗
+      this.Girl = {
+        type : 'success',
+        content : '登陆成功',
+        show : true,
+      };
+    }else{
+      // 调用错误弹窗
+      this.Girl = {
+        type : 'danger',
+        content : '账号密码错误,请重新输入',
+        show : true,
+      };
     }
   }
 

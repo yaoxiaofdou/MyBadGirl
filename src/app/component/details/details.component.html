@@ -31,7 +31,7 @@
         </template>
       </ngb-tab>
       <ngb-tab>
-        <template ngbTabTitle><b style="padding: 0.8rem;color: #262336;font-size: 1.2rem;">规则</b></template>-->
+        <template ngbTabTitle><b style="padding: 0.8rem;color: #262336;font-size: 1.2rem;">规则</b></template>
         <template ngbTabContent>
           <p *ngFor="let ren of activity.rule">
             {{ ren }}
@@ -54,7 +54,7 @@
         <template ngbTabTitle><b style="padding: 0.8rem;color: #262336;font-size: 1.2rem;">排行</b></template>
         <template ngbTabContent>
           <p *ngFor="let rank of activity.Ranking;let i = index;">
-            <i class="iconfont" [ngClass]="{ 'icon-icon-test':i==0,'icon-icon-test1':i==1,'icon-icon-test2':i==2 }"></i>-->
+            <i class="iconfont" [ngClass]="{ 'icon-icon-test':i==0,'icon-icon-test1':i==1,'icon-icon-test2':i==2 }"></i>
             <!-- 前三用图标 -->
             <i [ngClass]="{ 'rankhide':i==0||i==1||i==2}">{{ i+1 }}</i>
             <b>{{ rank.name }}</b>

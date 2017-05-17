@@ -5,10 +5,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
 
-// material
-// import { MaterialModule } from '@angular/material';
-// import 'hammerjs';
-
 // router
 import { appRoutes } from './app.routes';
 
@@ -46,6 +42,9 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 // directive
 import { MAlertDirective } from './directive/mAlert/m-alert.directive';
 
+// public component
+import { AlertComponent } from './public/alert/alert.component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -67,7 +66,8 @@ import { MAlertDirective } from './directive/mAlert/m-alert.directive';
     HomeListPipe,
     UserEditComponent,
     LoginComponent,
-    MAlertDirective
+    MAlertDirective,
+    AlertComponent
   ],
   providers: [HomeListDataService,UserService,CookieService],
   bootstrap: [AppComponent]

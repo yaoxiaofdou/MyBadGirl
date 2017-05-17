@@ -1,0 +1,7 @@
+<div class="MyBadGirlAlert"
+    [ngClass]="{ 'successAlert' : Girl['type'] == 'success' , 'dangerAlert' : Girl['type'] == 'danger' ,'warningAlert' : Girl['type'] == 'warning'}" 
+    *ngIf='Girl["show"]'
+    (click)="closeAlert()"
+    >
+    {{ Girl['content'] }}
+</div>

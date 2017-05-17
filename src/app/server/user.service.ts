@@ -78,7 +78,7 @@ export class UserService {
   constructor() { }
 
   // 登陆验证 （账号，密码）现在是没有接入数据的做法
-  loginverification(acnt,pasd){
+  public loginverification(acnt,pasd){
     let login = {
       static:false,
       id:''
@@ -86,34 +86,32 @@ export class UserService {
     this.userAccountData.forEach((item,index)=>{
       // 如果账号密码都正确，返回 loginStatic = true
       if(item['account'] == acnt){
-        if(item['password'] == acnt){
-          login.static = true;
-          login.id = item['id'];
+        if(item['password'] == pasd){
+          login['static'] = true;
+          login['id'] = item['id'];
         }
       }
     })
     // 都正确，则返回对于的用户信息
-    if(login.static){
+    if(login['static']){
       this.userListData.forEach((item,index)=>{
         if(item['id'] == login.id){
           item['static'] = true;
-          console.log(item)
-          console.log(login)
+          console.log('登陆成功，当前用户id',login)
           // 设置当前用户信息
           this.user = item;
-          return login
         }
       })
+      return login
     }else{
       // 如果账号密码都错误，返回 loginStatic = false
-      console.log(login)
       return login
     }
 
   }
 
   // 返回当前用户数据
-  getThisUser(){
+  public getThisUser(){
     let user = this.userListData[0];
     return user
   }

@@ -1,0 +1,37 @@
+/*
+*   2017.05.16
+*   xiaofeng.yao
+*   自定义弹窗提示组件
+*/
+.MyBadGirlAlert{
+    width: 90%;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    z-index: 12;
+    color: #fff;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition:0.7s;
+}
+.successAlert{
+    background-color:#5dc15d;
+    box-shadow: 0px 0px 20px 4px #5dc15d;
+}
+.dangerAlert{
+    background-color:#f44336;
+    box-shadow: 0px 0px 20px 4px #f44336;
+}
+.warningAlert{
+    background-color:#e8c851;
+    box-shadow: 0px 0px 20px 4px #e8c851;
+}
+.alertShow{
+    display:none;
+}
