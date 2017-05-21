@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../server/user.service';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 @Component({
   selector: 'app-personal',
@@ -37,7 +38,8 @@ export class PersonalComponent implements OnInit {
   private tabNumber:Number = 0;
 
   constructor(
-    private userService:UserService
+    private userService:UserService,
+    private cookieService:CookieService
   ) { }
 
   ngOnInit() {
@@ -47,9 +49,16 @@ export class PersonalComponent implements OnInit {
     this.getUser();
   }
 
+  // 监听服务中用户数据的变化，写入当前侧边栏。
+  ngDoCheck(){
+    this.User = this.userService.returnUser();
+    // console.log(this.User)
+  }
+
   // 获取当前用户数据
   getUser(){
-     this.User = this.userService.getThisUser();
+    let user = this.cookieService.getObject('MyBadGirl_LoginUser');
+    this.userService.getThisUser(user['Id']);
   }
 
   // 设置list高度

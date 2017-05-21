@@ -3,9 +3,17 @@
   <div class="homeSection">
     <!-- home header nav -->
     <div class="home__headerNav">
-      <i  class="iconfont headerNav__menu" [ngClass]="{'icon-menu':!mybadgirl.isMenu,'icon-shiliangzhinengduixiang4':mybadgirl.isMenu}" (click)="showHomeMenu();"></i>
+      <i  class="iconfont headerNav__menu" 
+          [ngClass]="{'icon-menu':!mybadgirl.isMenu,'icon-shiliangzhinengduixiang4':mybadgirl.isMenu}" 
+          *ngIf="mybadgirl['isLogin']"
+          (click)="showHomeMenu();"></i>
       <h3 class="cssa25592c5f177a3" (click)="mybadgirl.isClass = !mybadgirl.isClass;">{{ homeCls }}<i class="iconfont" [ngClass]="{ 'icon-xia' : !mybadgirl.isClass , 'icon-shang' : mybadgirl.isClass }" ></i></h3>
-      <i class="iconfont icon-user headerNav__user" [routerLink]="['/personal']"></i>
+      <i class="iconfont icon-user headerNav__user" 
+        *ngIf="mybadgirl['isLogin']"
+        [routerLink]="['/personal']"></i>
+      <i class="iconfont icon-user headerNav__user" 
+        *ngIf="!mybadgirl['isLogin']"
+        [routerLink]="['/login']"></i>
     </div>
     <!-- 分类 -->
     <div class="home__headerCls" [ngClass]="{ 'home__headerCls--show':!mybadgirl.isClass }">
@@ -21,3 +29,6 @@
 
 <!-- home aside nav -->
 <app-home-asidenav></app-home-asidenav>
+
+<!-- 弹窗组件 -->
+<app-alert [(Girl)]="Girl"></app-alert>

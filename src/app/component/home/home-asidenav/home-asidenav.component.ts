@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../server/user.service';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-asidenav',
@@ -9,7 +11,7 @@ import { UserService } from '../../../server/user.service';
 export class HomeAsidenavComponent implements OnInit {
 
   // 当前登录的用户
-  private user:Object = {};
+  private User;
 
   // menu 列表
   private menuList:Array<Object> = [
@@ -36,6 +38,8 @@ export class HomeAsidenavComponent implements OnInit {
 
   constructor(
     private userServer:UserService,
+    private cookieService:CookieService,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -43,9 +47,32 @@ export class HomeAsidenavComponent implements OnInit {
     this.getUser();
   }
 
+  // 监听服务中用户数据的变化，写入当前侧边栏。
+  ngDoCheck(){
+    this.User = this.userServer.returnUser();
+    // console.log(this.User)
+  }
+
   // 从服务获取当前登录用户
   getUser(){
-    this.user = this.userServer.getThisUser();
+    let user = this.cookieService.getObject('MyBadGirl_LoginUser');
+    // 传入用户id 返回用户数据
+    if(user){
+      // this.userServer.getThisUser(user['Id']);
+      this.userServer.getThisUser(user['Id']);  
+      // this.userServer.getThisUser(user['Id'])
+      //              .then(
+      //                data => console.log(data),
+      //                error =>  console.log(error));
+    }
+  }
+
+  // 退出登陆
+  public signOut(){
+    // 删除cookie中的登陆信息
+    this.cookieService.remove('MyBadGirl_LoginUser');
+    // 路由跳转到首页
+    this.router.navigate(['/login']);
   }
 
   // menu tab 切换

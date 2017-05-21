@@ -14,14 +14,14 @@
       };
 *  
 */
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, OnDestroy ,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss']
 })
-export class AlertComponent implements OnInit {
+export class AlertComponent implements OnInit,OnDestroy {
 
   @Input() Girl:Object;
   // @Output() provinceOut = new EventEmitter();
@@ -30,30 +30,32 @@ export class AlertComponent implements OnInit {
   public province:Boolean;
 
   // 弹窗对象
-  public alert:Object = {};
+  // public alert:Object = {};
 
   // 定时器
   private timer;
 
   constructor() {
-    // 弹窗对象 
-    // type         (类型,success,info,danger,warning)
-    // dismissible  (布尔值，是否显示关闭'X')
-    // time         (定时开关，多久后关闭弹窗)
-    // title        (弹窗标题)
-    // content      (弹窗内容)
-    this.alert = {
-      type:'',
-      dismissible:'',
-      time:'',
-      title:'',
-      content:'',
-    }
+    // 弹窗对象
+    // this.alert = {
+    //   type:'',           // type         (类型,success,info,danger,warning)
+    //   dismissible:'',    // dismissible  (布尔值，是否显示关闭'X')
+    //   time:'',           // time         (定时开关，多久后关闭弹窗)
+    //   title:'',          // title        (弹窗标题)
+    //   content:'',        // content      (弹窗内容)
+    // }
   }
 
   ngOnInit() {
     // 定时关闭弹窗
-    // this.closeTimer(this.timer);
+    this.closeTimer(this.timer);
+  }
+
+  // 销毁组件时清除定时器
+  ngOnDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
   }
 
   // 手动关闭弹窗
@@ -70,7 +72,7 @@ export class AlertComponent implements OnInit {
     this.timer = setInterval(() => {
       //this.provinceOut.emit();
       this.Girl['show'] = false;
-    }, 3000);
+    }, 5000);
   }
 
 }

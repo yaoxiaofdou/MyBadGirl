@@ -45,6 +45,12 @@ import { MAlertDirective } from './directive/mAlert/m-alert.directive';
 // public component
 import { AlertComponent } from './public/alert/alert.component';
 
+// wilddog
+// import * as wilddog from 'wilddog';
+
+// rxjs
+import './rxjs-operators';
+
 @NgModule({
   imports: [
     BrowserModule,

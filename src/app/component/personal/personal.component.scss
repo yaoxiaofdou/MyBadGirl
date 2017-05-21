@@ -4,10 +4,11 @@
 *   personal.html
 */
 .Personal{
+    $personal_text_Color:#262336;
     .Personal__header{
         width: 100%;
         padding: 0 15px;
-        background-color: #262336;
+        background-color: $personal_text_Color;
         height: 4.4em;
         text-align: center;
         color: #fff;
@@ -55,11 +56,11 @@
                 p{
                     font-size: 1.2rem;
                     margin:0;
-                    color: #fffafa;
+                    color: $personal_text_Color;
                 }
                 h5{
                     font-size: 3rem;
-                    color: #f5f5f0;
+                    color: $personal_text_Color;
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
@@ -76,11 +77,11 @@
                 p{
                     font-size: 1.2rem;
                     margin:0;
-                    color: #fffafa;
+                    color: $personal_text_Color;
                 }
                 h5{
                     font-size: 3rem;
-                    color: #f5f5f0;
+                    color: $personal_text_Color;
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
@@ -92,7 +93,7 @@
                 width:$faceWidth;
                 height:$faceWidth;
                 border-radius:50%;
-                box-shadow: 0 0 0.5rem 0.5rem #eee;
+                box-shadow: 0 0 16.5rem 3.5rem $personal_text_Color;
                 overflow:hidden;
                 position:relative;
                 z-index:2;
@@ -112,7 +113,7 @@
                 left: 0;
                 right: 0;
                 z-index:2;
-                color: #fffafa;
+                color: $personal_text_Color;
                 transition:0.7s;
             }
         }
@@ -125,13 +126,14 @@
                 width: 1.5rem;
                 height: 1.5rem;
                 border-radius: 50%;
-                background-color: #ea8216;
+                background-color: $personal_text_Color;
                 p{
                     display: none;
                 }
                 h5{
                     font-size: 1rem;
                     line-height: 1.5rem;
+                    color:#fff;
                 }
             }
             .Personal__CFName__edit{
@@ -141,13 +143,14 @@
                 width: 1.5rem;
                 height: 1.5rem;
                 border-radius: 50%;
-                background-color: #ea8216;
+                background-color: $personal_text_Color;
                 p{
                     display: none;
                 }
                 h5{
                     font-size: 1.25rem;
                     line-height: 1.5rem;
+                    color:#fff;
                 }
             }
             .Personal__CFName__face{
@@ -180,10 +183,10 @@
                     display:inline-block;
                 }
                 .ctab--isActive{
-                    border-top: 1px solid #ddd;
-                    border-left: 1px solid #ddd;
+                    border-top: 2px solid $personal_text_Color;
+                    /*border-left: 1px solid #ddd;
                     border-right: 1px solid #ddd;
-                    border-bottom: 4px solid #fff;
+                    border-bottom: 4px solid #fff;*/
                     position: relative;
                     bottom: 3px;
                 }

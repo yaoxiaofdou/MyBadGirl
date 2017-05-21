@@ -3,6 +3,7 @@
 *   xiaofeng.yao
 *   自定义弹窗提示组件
 */
+
 .MyBadGirlAlert{
     width: 90%;
     height: 3.5rem;
@@ -10,7 +11,7 @@
     position: fixed;
     left: 0;
     right: 0;
-    top: 0;
+    bottom: 0;
     margin: auto;
     z-index: 12;
     color: #fff;
@@ -21,17 +22,17 @@
     transition:0.7s;
 }
 .successAlert{
-    background-color:#5dc15d;
-    box-shadow: 0px 0px 20px 4px #5dc15d;
+    background-color:#83d483;
+    box-shadow: 0px 0px 10px 2px #83d483;
 }
 .dangerAlert{
-    background-color:#f44336;
-    box-shadow: 0px 0px 20px 4px #f44336;
+    background-color:#f5a09a;
+    box-shadow: 0px 0px 10px 2px #f5a09a;
 }
 .warningAlert{
     background-color:#e8c851;
-    box-shadow: 0px 0px 20px 4px #e8c851;
+    box-shadow: 0px 0px 10px 2px #e8c851;
 }
 .alertShow{
-    display:none;
+    //top: 0;
 }

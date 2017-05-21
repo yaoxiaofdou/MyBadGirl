@@ -3,17 +3,17 @@
   <div class="asidenav__header">
     <!-- face -->
     <div class="av_face">
-      <img [src]="user.img" alt="face"/>
+      <img [src]="User.img" alt="face"/>
     </div>
-    <h3 class="cssa25592c5f177a3">{{ user.name }}</h3>
+    <h3 class="cssa25592c5f177a3">{{ User.name }}</h3>
     <div class="user__info">
       <div class="user__infoJoin">
         <p>参加</p>
-        <h3 class="cssa25592c5f177a3">{{ user.joinSum }}</h3>
+        <h3 class="cssa25592c5f177a3">{{ User.joinSum }}</h3>
       </div>
       <div class="user__infoEdit">
         <p>发布</p>
-        <h3 class="cssa25592c5f177a3">{{ user.editSum }}</h3>
+        <h3 class="cssa25592c5f177a3">{{ User.editSum }}</h3>
       </div>
     </div>
     <!-- 导航链接 -->
@@ -24,7 +24,7 @@
         {{ men.name }}
       </div>
     </div>
-    <div class="av_signOut cssa25592c5f177a3">
+    <div class="av_signOut cssa25592c5f177a3" (click)="signOut()">
       <i class="iconfont icon-shiliangzhinengduixiang4"></i>
       Sign Out
     </div>
