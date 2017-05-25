@@ -37,7 +37,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    // 调用一次账户数据服务,这种做法不好，会暴露所有用户信息(临时使用)
+    this.userService.loginverification();
   }
 
   // 登陆方法，登陆验证

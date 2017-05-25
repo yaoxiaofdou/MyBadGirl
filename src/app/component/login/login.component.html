@@ -20,9 +20,11 @@
       </span>
       <input type="password" class="form-control" name="password" [(ngModel)]="login.pwd" placeholder="Password" />
     </div>
-    <p>
-      <a (click)="hrefRegister()">注册</a>
+    <p class="btn_login">
       <a (click)="UserLogin()">登陆</a>
+    </p>
+    <p class="btn_register">
+      <a (click)="hrefRegister()">注册</a>
     </p>
   </form>
   <!-- 注册表单 -->
@@ -48,9 +50,11 @@
       </span>
       <input type="text" class="form-control" name="name" [(ngModel)]="login.name" placeholder="Name" aria-describedby="basic-addon1">
     </div>
-    <p>
+    <p class="btn_login">
+      <a (click)="NewUser()">注册完成</a>
+    </p>
+    <p class="btn_register">
       <a (click)="formReset()">重置</a>
-      <a (click)="NewUser()">完成</a>
     </p>
   </form>
 

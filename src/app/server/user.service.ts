@@ -100,7 +100,7 @@ export class UserService {
     return ref
   }
 
-  // 登陆验证 （账号，密码）现在是没有接入数据的做法
+  // 登陆验证 （账号，密码）
   public loginverification(){
     // 获取 wilddog 链接
     const ref = this.LinkWilddog();

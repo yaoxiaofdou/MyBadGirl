@@ -11,7 +11,7 @@
     h1{
         width: 100%;
         position: absolute;
-        top:20%;
+        top:18%;
         z-index:2;
         text-align:center;
         font-size:2.8rem;
@@ -34,26 +34,27 @@
         filter:blur(15px);
     }
     .login__form{
-        width:70%;
+        width:85%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
         z-index:2;
-        border: 1px solid #fff;
         padding: 1rem;
         transition:0.7s;
+        padding-top: 12rem;
         .input-group{
             margin-top:1rem;
             span{
                 background: transparent;
-                border: 1px solid #fff;
+                border:none;
                 color:#fff;
                 border-right: none;
             }
             input{
                 background: transparent;
-                border: 1px solid #fff;
+                border:none;
+                border-bottom:1px solid #fff;
                 color:#fff;
             }
             input::-webkit-input-placeholder{
@@ -67,19 +68,33 @@
             } 
             input::-ms-input-placeholder { /* Internet Explorer 10+ */ 
                 color:#fff !important;
-            } 
+            }
+            &:nth-child(2){
+                margin-top: 3rem;
+            }
         }
-        p{
-            display: flex;
-            justify-content: space-around;
+        .btn_login{
             a{
-                margin-top: 1.2rem;
+                display: block;
+                width: 100%;
+                text-align: center;
+                line-height: 4rem;
+                background-color: #50c5ae;
+                color:#fff;
+                margin-top: 6rem;
                 font-size: 1.2rem;
-                color: #fff;
-                padding: 0.5rem 1rem;
-                &:nth-child(2){
-                    border: 1px solid #fff;
-                }
+            }
+        }
+        .btn_register{
+            a{
+                display: block;
+                width: 100%;
+                text-align: center;
+                line-height: 4rem;
+                background-color: #ddd;
+                color:#fff;
+                margin-top: 1rem;
+                font-size: 1.2rem;
             }
         }
     }
@@ -87,23 +102,27 @@
         transform: translateX(-200%);
     }
     .register__form{
-        width:70%;
+        width:85%;
         position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
         z-index:2;
-        border: 1px solid #fff;
         padding: 1rem;
         transition:0.7s;
+        padding-top: 12rem;
         .input-group{
             margin-top:1rem;
             span{
                 background: transparent;
-                border: 1px solid #fff;
+                border:none;
                 color:#fff;
                 border-right: none;
             }
             input{
                 background: transparent;
-                border: 1px solid #fff;
+                border:none;
+                border-bottom: 1px solid #fff;
                 color:#fff;
             }
             input::-webkit-input-placeholder{
@@ -117,19 +136,36 @@
             } 
             input::-ms-input-placeholder { /* Internet Explorer 10+ */ 
                 color:#fff !important;
-            } 
+            }
+            &:nth-child(2){
+                margin-top:2rem;
+            }
+            &:nth-child(3){
+                margin-top:2rem;
+            }
         }
-        p{
-            display: flex;
-            justify-content: space-around;
+        .btn_login{
             a{
-                margin-top: 1.2rem;
+                display: block;
+                width: 100%;
+                text-align: center;
+                line-height: 4rem;
+                background-color: #50c5ae;
+                color:#fff;
+                margin-top: 6rem;
                 font-size: 1.2rem;
-                color: #fff;
-                padding: 0.5rem 1rem;
-                &:nth-child(2){
-                    border: 1px solid #fff;
-                }
+            }
+        }
+        .btn_register{
+            a{
+                display: block;
+                width: 100%;
+                text-align: center;
+                line-height: 4rem;
+                background-color: #ddd;
+                color:#fff;
+                margin-top: 1rem;
+                font-size: 1.2rem;
             }
         }
     }

@@ -10,8 +10,11 @@ import { Router } from '@angular/router';
 })
 export class HomeAsidenavComponent implements OnInit {
 
+  // 页面元素控制对象
+  private asidenav:Object = {};
+
   // 当前登录的用户
-  private User;
+  private User:Object = {};
 
   // menu 列表
   private menuList:Array<Object> = [
@@ -40,7 +43,12 @@ export class HomeAsidenavComponent implements OnInit {
     private userServer:UserService,
     private cookieService:CookieService,
     private router:Router
-  ) { }
+  ) { 
+    // 页面元素控制对象
+    this.asidenav = {
+      isLogin:false, // 判断是否登陆,默认没有登陆
+    }
+  }
 
   ngOnInit() {
     // 从服务获取当前登录用户
@@ -54,16 +62,20 @@ export class HomeAsidenavComponent implements OnInit {
   }
 
   // 从服务获取当前登录用户
-  getUser(){
-    let user = this.cookieService.getObject('MyBadGirl_LoginUser');
+  public getUser(){
+    this.User = this.cookieService.getObject('MyBadGirl_LoginUser');
     // 传入用户id 返回用户数据
-    if(user){
+    if(this.User){
       // this.userServer.getThisUser(user['Id']);
-      this.userServer.getThisUser(user['Id']);  
+      this.userServer.getThisUser(this.User['Id']);
+      // 有登陆才显示侧边栏
+      this.asidenav['isLogin'] = true;
       // this.userServer.getThisUser(user['Id'])
       //              .then(
       //                data => console.log(data),
       //                error =>  console.log(error));
+    }else{
+      this.asidenav['isLogin'] = false;
     }
   }
 
@@ -76,7 +88,7 @@ export class HomeAsidenavComponent implements OnInit {
   }
 
   // menu tab 切换
-  avAbtnChange(obj){
+  public avAbtnChange(obj){
     this.menuList.forEach((item,index)=>{
       item['isMenu'] = false;
     })
