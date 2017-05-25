@@ -11,10 +11,10 @@
   <!-- 任务详情，图片和任务名 -->
   <div class="LDetails__task">
     <div class="LDetails__taskName">
-      <div class="task__mask" [ngStyle]="{'background':'url(' + activity.images + ')no-repeat center center','filter':'blur(10px)'}"></div>
+      <div class="task__mask" [ngStyle]="{'background':'url(' + activity.images + ')no-repeat center center','filter':'blur(14px)'}"></div>
       <!--<div class="task__name" [ngStyle]="{'background-color':'rgba(' + activity.color + ',0.6)'}">-->
       <div class="task__name">
-        <i class="iconfont icon-zongrenqi"></i>
+        <i class="iconfont icon-zongrenqi" [ngStyle]="{'color':'rgba(' + activity.color + ',1)'}"></i>
         <p class="cssa25592c5f177a3"><span>{{ activity.sum }}</span> {{ activity.unit }}</p>
       </div>
     </div>
@@ -60,11 +60,6 @@
             <b>{{ rank.name }}</b>
             <span>{{ rank.sum }}</span>
           </p>
-        </template>
-      </ngb-tab>
-      <ngb-tab title="Disabled" [disabled]="true">
-        <template ngbTabContent>
-          <p>Raw.</p>
         </template>
       </ngb-tab>
     </ngb-tabset>

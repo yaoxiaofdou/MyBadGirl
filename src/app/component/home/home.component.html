@@ -1,5 +1,6 @@
 <!-- src/home/home.component.html -->
 <div class="home" [ngClass]="{'home--isActive':mybadgirl.isMenu}">
+  <div class="home-aside--mask" *ngIf="mybadgirl.isMenu" (click)="mybadgirl.isMenu = false"></div>
   <div class="homeSection">
     <!-- home header nav -->
     <div class="home__headerNav">

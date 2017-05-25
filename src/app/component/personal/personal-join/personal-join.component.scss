@@ -4,11 +4,13 @@
 *   personal-join.html
 */
 .LDetails__list{
-    padding:1rem;
+    padding:0.6rem;
     .LDetails__li{
         width:100%;
         height:18rem;
-        margin-bottom:1rem;
+        margin-bottom:0.6rem;
+        border-radius: 5px;
+        border: 1px solid #efefef;
         &:last-child{
             margin-bottom:0;
         }
@@ -28,7 +30,6 @@
             }
         }
         .LDetails__liContent{
-            padding:1rem;
             width:100%;
             height:100%;
             position:absolute;
@@ -36,9 +37,9 @@
             left:0;
             z-index:2;
             color:#fff;
-            background-color: rgba(64, 114, 175,0.3);
             .LDetails__liContent__h{
-                margin-top:1rem;
+                text-indent: 2rem;
+                margin-top:2rem;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
@@ -49,52 +50,69 @@
                 text-overflow: ellipsis;
             }
             .LDetails__liContent__target{
-                display: -webkit-box;
+                position: absolute;
+                bottom: 5rem;
+                background: rgba(64, 114, 175, 1);
+                width: 100%;
+                text-indent: 2rem;
+                padding: 0.2rem;
+                display: flex;
+                align-items: center;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
                 font-size: 1.2rem;
-                height: 3.5rem;  
+                height: 5rem;  
                 overflow: hidden;
                 text-overflow: ellipsis;
                 margin:0;
             }
             .LDetails__liContent__user{
-                display: -webkit-box;
+                margin: 0;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                background: #fff;
+                color: #676464;
+                height: 5rem;
+                text-indent: 2rem;
+                display: flex;
+                align-items: center;
                 -webkit-line-clamp: 1;
                 -webkit-box-orient: vertical;
-                font-size: 1.1rem;
-                color: #fff;
+                font-size: 1.4rem;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                i{
-                    font-size: 1.5rem;
-                    vertical-align: middle;
-                    margin-right: 0.3rem;
+                img{
+                    width:2rem;
+                    height:2rem;
+                    border-radius:50%;
+                    margin: 0 0.3rem 0 2rem;
                 }
-            }
-            .LDetails__liContent__btn{
-                .liContent__btn__see{
-                    padding: 0.6rem 1.8rem;
-                    border:1px solid #fff;
-                    color: #fff;
-                    border-radius: 25px;
-                    font-size: 1.4rem;
-                    i{
-                        font-size: 1.6rem;
-                        vertical-align: middle;
-                        margin-right: 0.4rem;
+                .LDetails__liContent__btn{
+                    position:absolute;
+                    top:0;
+                    right:0;
+                    div{
+                        display:inline-block;
+                        width: 5rem;
+                        height: 5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        //background-color:#999;
+                        color: #999;
+                        i{
+                            font-size: 2rem;
+                        }
                     }
-                }
-                .liContent__btn__giveup{
-                    padding: 0.6rem 1.8rem;
-                    background-color: #999;
-                    color: #fff;
-                    font-size: 1.4rem;
-                    margin-left: 4rem;
-                    i{
-                        font-size: 1.6rem;
-                        vertical-align: top;
-                        margin-right: 0.4rem;
+                    .liContent__btn__see{
+                        position: absolute;
+                        right: 6rem;
+                        border-left: 1px solid #efefef;
+                    }
+                    .liContent__btn__giveup{
+                        position: absolute;
+                        right: 2rem;
                     }
                 }
             }
@@ -105,12 +123,12 @@
                 height: $icon-width;
                 border-radius: 50%;
                 text-align: center;
-                line-height: $icon-width;
+                line-height: $icon-width - 0.2;
                 position: absolute;
                 top: 1rem;
                 right: 1rem;
-                background-color: #fff;
-                color: #999;
+                border: 1px solid #fff;
+                color: #fff;
                 font-size: 2rem;
             }
         }

@@ -1,21 +1,28 @@
 <!-- 我加入 -->
 <div class="LDetails__list">
   <!-- 活动li -->
-  <div class="LDetails__li">
+  <div class="LDetails__li" *ngFor="let item of dataList,let i = index;">
     <!-- 活动背景 -->
     <div class="LDetails__liMask">
-      <img src="src/images/1.png" alt="img"/>
+      <img [src]="item.images" alt="img"/>
     </div>
     <!-- 活动内容 -->
-    <div class="LDetails__liContent">
-      <h3 class="LDetails__liContent__h">湖边跑步</h3>
-      <p class="LDetails__liContent__target">每日完成5公里日常训练吗，坚持打卡。</p>
-      <p class="LDetails__liContent__user"><i class="iconfont icon-fabu"></i>xiaofeng.yao</p>
-      <p class="LDetails__liContent__btn">
-        <a class="liContent__btn__see"><i class="iconfont icon-chakan"></i>查看</a>
-        <a class="liContent__btn__giveup"><i class="iconfont icon-shiliangzhinengduixiang4"></i>放弃</a>
-      </p>
-      <span class="LDetails__liContent__icon">任</span>
+    <div class="LDetails__liContent" [ngStyle]="{'background-color':'rgba(' + item.color + ',0.4)'}">
+      <h3 class="LDetails__liContent__h">{{ item.name }}</h3>
+      <p class="LDetails__liContent__target" [ngStyle]="{'background-color':'rgba(' + item.color + ',1)'}">{{ item.target }}</p>
+      <div class="LDetails__liContent__user">
+        <img src="src/images/rn.jpg" alt="face"/>
+        {{ item.user }}
+        <div class="LDetails__liContent__btn">
+          <div class="liContent__btn__see">
+            <i class="iconfont icon-chakan" [ngStyle]="{'color':'rgba(' + item.color + ',1)'}"></i>
+          </div>
+          <div class="liContent__btn__giveup">
+            <i class="iconfont icon-shiliangzhinengduixiang4" [ngStyle]="{'color':'rgba(' + item.color + ',1)'}"></i>
+          </div>
+        </div>
+      </div>
+      <span class="LDetails__liContent__icon">{{ item.cls }}</span>
     </div>
   </div>
 </div>

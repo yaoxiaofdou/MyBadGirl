@@ -192,6 +192,7 @@ export class UserService {
     return Promise.reject(errMsg);
   }
 
+  // 返回当前登陆用户
   public returnUser(){
     return this.User
   }

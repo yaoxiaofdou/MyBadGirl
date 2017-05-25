@@ -4,13 +4,17 @@
 *   user-edit.component.html
 */
 .userEdit{
+    $userEdit-bg:#fff;
+    $userEdit-color:#262336;
+
     .userEdit__header{
         width: 100%;
         padding: 0 15px;
-        background-color: #262336;
+        background-color: $userEdit-bg;
         height: 4.4em;
         text-align: center;
-        color: #fff;
+        color: $userEdit-color;
+        border-bottom:1px solid $userEdit-color;
         line-height: 4.4em;
         padding:0 15px;
         position: relative;
@@ -24,7 +28,7 @@
         .userEdit__edit{
             float: right;
             font-size:1.4rem;
-            color:#fff;
+            color:$userEdit-color;
         }
     }
 
@@ -36,6 +40,19 @@
             }
             input{
                 font-size:1.4rem;
+                border:none;
+                background-color: #b0b0b0;
+            }
+            /*input::-webkit-input-placeholder{ 
+                color:#fff !important; 
+            } */
+            textarea{
+                font-size:1.4rem;
+                border:none;
+                background-color: #b0b0b0;
+            }
+            .text-muted{
+                color:#d8d8d8 !important;
             }
         }
     }

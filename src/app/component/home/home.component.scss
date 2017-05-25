@@ -23,8 +23,16 @@
     transition:0.7s;
     outline: 1px solid #fff;
 
+    .home-aside--mask{
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+    }
+
     .homeSection{
-        $home-bg:#262336;
+        $home-bg:#fff;
 
         width:100%;
         height:auto;
@@ -39,7 +47,7 @@
             background-color:$home-bg;
             height:$headerNav-height;
             text-align:center;
-            color:#fff;
+            color:#262336;
             line-height:$headerNav-height;
             .headerNav__menu{
                 display:inline-block;

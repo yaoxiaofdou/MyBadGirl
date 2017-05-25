@@ -5,13 +5,13 @@
 */
 .Personal{
     $personal_text_Color:#262336;
+    $personal_text_bg:#fff;
     .Personal__header{
         width: 100%;
         padding: 0 15px;
-        background-color: $personal_text_Color;
         height: 4.4em;
         text-align: center;
-        color: #fff;
+        color: $personal_text_Color;
         line-height: 4.4em;
         padding:0 15px;
         position: relative;
@@ -93,7 +93,7 @@
                 width:$faceWidth;
                 height:$faceWidth;
                 border-radius:50%;
-                box-shadow: 0 0 16.5rem 3.5rem $personal_text_Color;
+                //box-shadow: 0 0 16.5rem 3.5rem $personal_text_Color;
                 overflow:hidden;
                 position:relative;
                 z-index:2;

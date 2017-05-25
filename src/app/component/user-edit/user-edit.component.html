@@ -12,37 +12,50 @@
     <form>
       <!-- 任务名 -->
       <div class="form-group">
-        <label for="exampleInputEmail1">任务名</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="输入任务名">
-        <small id="emailHelp" class="form-text text-muted">最好简短点，6个字左右</small>
+        <!--<label for="exampleInputEmail1">任务名</label>-->
+        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="输入任务名" />
+        <small class="form-text text-muted">最好简短点，6个字左右</small>
       </div>
       <!-- 任务介绍 -->
       <div class="form-group">
-        <label for="exampleTextarea">任务介绍</label>
-        <textarea class="form-control" id="exampleTextarea" placeholder="最好不要超过20个字，简单好记" rows="3"></textarea>
+        <!--<label for="exampleTextarea">任务介绍</label>-->
+        <textarea class="form-control" placeholder="输入任务介绍" rows="3"></textarea>
+        <small class="form-text text-muted">最好不要超过20个字，简单好记</small>
       </div>
       <!-- 统计方法 -->
       <div class="form-group">
-        <label for="exampleTextarea">统计方法</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="输入统计方法">
+        <!--<label for="exampleTextarea">统计方法</label>-->
+        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="输入统计方法">
         <small id="emailHelp" class="form-text text-muted">如：公里，总价，总人数等等......</small>   
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="方法单位">
         <small id="emailHelp" class="form-text text-muted">如：(米)公里，(RMB)总价，(位)总人数等等......</small>
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              单位(米,RMB,个...)
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item">米</a>
+              <a class="dropdown-item">RMB</a>
+              <a class="dropdown-item">个</a>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- 开始时间 获取当前时间 -->
       <div class="form-group">
-        <label for="exampleInputPassword1">开始时间</label>
-        <h4 style="padding-left:1rem;">2017/05/09</h4>
+        <label for="exampleInputPassword1">活动开始时间</label><span>2017/05/09</span>
+        <!--<h4 style="padding-left:1rem;"><span>活动开始时间:</span></h4>-->
       </div>
       <!-- 结束时间 -->
       <div class="form-group">
-        <label for="exampleInputPassword1">结束时间</label>
-        <input type="date" class="form-control" id="exampleInputdata" placeholder="2017/05/09">
+        <label for="exampleInputPassword1">活动结束时间</label>
+        <input type="date" class="form-control" placeholder="2017/05/09">
       </div>
       <!-- 任务规则 -->
       <div class="form-group">
-        <label for="exampleTextarea">任务规则</label>
-        <textarea class="form-control" id="exampleTextarea" placeholder="最好不要超过120个字，简单好记" rows="7"></textarea>
+        <!--<label for="exampleTextarea">任务规则</label>-->
+        <textarea class="form-control" placeholder="输入任务规则" rows="7"></textarea>
+        <small class="form-text text-muted">最好不要超过120个字，简单好记</small>
       </div>
     </form>
   </div>
