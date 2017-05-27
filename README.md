@@ -6,15 +6,11 @@ MyBadGirl 是一个活动任务管理app，用户可以发布任务，查看任�
 
 基于 angular2 + ui-boorstrap 练手demo,脚手架运用的是 angular-cli 。
 
-demo        >>>>>         www.inamorato.cn/cc
+[demo](http://ww.inamorato.cn/cc)
 
+![WechatIMG4478](http://www.inamorato.cn/cc/WechatIMG4478.jpeg)
 
-
-
-
-![WechatIMG4478](/Users/apple/Desktop/WechatIMG4478.jpeg)
-
-![2](/Users/apple/Desktop/2.png)
+![2.png](http://www.inamorato.cn/cc/2.png)
 
 
 
