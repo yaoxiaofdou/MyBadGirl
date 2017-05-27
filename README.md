@@ -1,27 +1,33 @@
-# MyBadGirl
+# MyBadGirl 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-beta.32.3.
+MyBadGirl 是一个活动任务管理app，用户可以发布任务，查看任务，加入其他人创建的活动或者任务，任务设有统计跟排名，可以很直观的看到自己的状态，最近活跃情况，于好友私聊，建群群聊等等。
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### 基本介绍
 
-## Code scaffolding
+基于 angular2 + ui-boorstrap 练手demo,脚手架运用的是 angular-cli 。
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+demo        >>>>>         www.inamorato.cn/cc
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+![WechatIMG4478](/Users/apple/Desktop/WechatIMG4478.jpeg)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+![2](/Users/apple/Desktop/2.png)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# 安装
+
+git clone https://github.com/yaoxiaofdou/MyBadGirl.git
+
+### 安装必要的包
+
+npm install
+
+### 启动
+
+ng server
+
+喜欢给点鼓励吧(star)！持续更新中。。。
