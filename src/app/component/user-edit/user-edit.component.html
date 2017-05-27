@@ -7,8 +7,82 @@
     <a class="userEdit__edit" [routerLink]="['/personal']">发布</a>
   </div>
 
-  <!-- 表单 -->
   <div class="userEdit__content">
+    <div class="userEdit__mask"></div>
+    <!-- 创建按钮 -->
+    <div class="userEdit__createBtn" (click)="userEdit['zIndex'] = 7" *ngIf="userEdit['zIndex'] == 8">
+      创建任务
+    </div>
+    <!-- 分类 -->
+    <div class="userEdit__Rcls userEdit__public" [ngClass]="{'userEdit__Rcls--active': userEdit['zIndex'] == 7 }">
+      <h3>分类</h3>
+      <select [(ngModel)]="SubmttObj['cls']" class="userEdit__Rcls__select">
+        <option *ngFor="let rct of userEdit['cls']"
+                  [value]="rct['name']">{{ rct['name'] }}</option>
+      </select>
+      <p (click)="reduceZIndexFun()">
+        下一步
+      </p>
+    </div>
+    <!-- 任务名 -->
+    <div class="userEdit__Rname userEdit__public" [ngClass]="{'userEdit__Rname--active': userEdit['zIndex'] == 6 }">
+      <h3>任务名</h3>
+      <input type="text" name="Rname" />
+      <p (click)="reduceZIndexFun()">
+        下一步
+      </p>
+    </div>
+    <!-- 任务介绍 -->
+    <div class="userEdit__Rdetail userEdit__public"  [ngClass]="{'userEdit__Rdetail--active': userEdit['zIndex'] == 5 }">
+      <h3>任务介绍</h3>
+      <textarea name="Rdetail" cols="30" rows="3"></textarea>
+      <p (click)="reduceZIndexFun()">
+        下一步
+      </p>
+    </div>
+    <!-- 统计方法 -->
+    <div class="userEdit__Rcount userEdit__public" [ngClass]="{'userEdit__Rcount--active': userEdit['zIndex'] == 4 }">
+      <h3>统计方法</h3>
+      <select [(ngModel)]="SubmttObj['Rcount']" class="userEdit__Rcount__select">
+        <option *ngFor="let rct of userEdit['Rcount']"
+                  [value]="rct['name']">{{ rct['name'] }}</option>
+      </select>
+      <p (click)="reduceZIndexFun()">
+        下一步
+      </p>
+    </div>
+    <!-- 活动时间 -->
+    <div class="userEdit__Rdate userEdit__public" [ngClass]="{'userEdit__Rdate--active': userEdit['zIndex'] == 3 }">
+      <h3>活动时间</h3>
+      <div class="userEdit__Rdate__date">
+        <a>2017-05-27 &nbsp; - &nbsp;</a><input type="date" class="Rdate__dateInput"/>
+      </div>
+      <p (click)="reduceZIndexFun()">
+        下一步
+      </p>
+    </div>
+    <!-- 活动规则 -->
+    <div class="userEdit__Rrule userEdit__public" [ngClass]="{'userEdit__Rrule--active': userEdit['zIndex'] == 2 }">
+      <h3>活动规则</h3>
+      <textarea name="Rdetail" cols="30" rows="5"></textarea>
+      <p (click)="reduceZIndexFun()">
+        下一步
+      </p>
+    </div>
+    <!-- 确认发布，取消 -->
+    <div class="userEdit__Rsubmit userEdit__public" [ngClass]="{'userEdit__Rsubmit--active': userEdit['zIndex'] == 1 }">
+      <p>
+        <input type="button" value="确定发布" class="userEdit__Rsubmit__submit" />
+      </p>
+      <p (click)="userEdit['zIndex']=8;">
+        <input type="button" value="取消" class="userEdit__Rsubmit__close" />
+      </p>
+    </div>
+  </div>
+
+
+  <!-- 表单 class="userEdit__content" -->
+  <div style="display:none;">
     <form>
       <!-- 任务名 -->
       <div class="form-group">

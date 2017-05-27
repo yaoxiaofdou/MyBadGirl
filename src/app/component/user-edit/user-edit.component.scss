@@ -33,7 +33,8 @@
     }
 
     .userEdit__content{
-        padding:2rem;
+        // 基本表单
+        /*padding:2rem;
         form{
             label{
                 font-size:1.4rem;
@@ -42,11 +43,11 @@
                 font-size:1.4rem;
                 border:none;
                 background-color: #b0b0b0;
-            }
+            }*/
             /*input::-webkit-input-placeholder{ 
                 color:#fff !important; 
             } */
-            textarea{
+            /*textarea{
                 font-size:1.4rem;
                 border:none;
                 background-color: #b0b0b0;
@@ -54,7 +55,204 @@
             .text-muted{
                 color:#d8d8d8 !important;
             }
+        }*/
+        $userEdit-color:#99bfb5;
+
+        .userEdit__createBtn{
+            width: 10rem;
+            height: 10rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index:8;
+            text-align: center;
+            font-size: 2rem;
+            line-height: 9.5rem;
+            display: inline-block;
+            // background-image: radial-gradient(circle,hsla(213,46%,47%,0.9),rgba(92, 184, 180, 0.9));
+            box-shadow: 0 0 2px 3px $userEdit-color;
+            border-radius: 50%;
+            color: $userEdit-color;
+            animation:userEditCreateBtnAnima 3s infinite;
         }
+        @keyframes userEditCreateBtnAnima{
+            0%{box-shadow: 0 0 3px 4px $userEdit-color;}
+            50%{box-shadow: 0 0 1px 1px $userEdit-color;}
+            100%{box-shadow: 0 0 3px 4px $userEdit-color;}
+        }
+
+        .userEdit__public{
+            opacity:0;
+            width:20rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index:2;
+            text-align: center;
+            padding-top: 2rem;
+            border-radius:10px;
+            box-shadow: 0 2px 2px 2px #ddd;
+            transition:0.7s;
+            h3{
+                font-size: 2rem;
+                color:#fafafa;
+            }
+            p{
+                font-size: 1.4rem;
+                color: #fff;
+                margin-top: 1.3rem;
+            }
+        }
+
+        .userEdit__Rcls{
+            height:14rem;
+            z-index:1;
+            background-color:rgb(169, 89, 99);
+            .userEdit__Rcls__select{
+                margin-top: 1.4rem;
+                width:50%;
+                height:3rem;
+                font-size: 1.6rem;
+                background-color:#fff;
+                position:relative;
+            }
+        }
+        .userEdit__Rcls--active{
+            opacity:1;
+            z-index:2;
+        }
+        .userEdit__Rname{
+            height:14rem;
+            z-index:1;
+            background-color: rgb(135, 150, 192);
+            input[type="text"]{
+                display:inline-block;
+                width: 99%;
+                height: 3rem;
+                color:rgb(135, 150, 192);
+                font-size: 1.6rem;
+                border: 1px solid $userEdit-color;
+                margin-top: 1.4rem;
+                &:focus{
+                    outline:none;
+                    box-shadow:0 0 4px 1px $userEdit-color;
+                }
+            }
+        }
+        .userEdit__Rname--active{
+            opacity:1;
+            z-index:2;
+        }
+        .userEdit__Rdetail{
+            height:18rem;
+            z-index:1;
+            background-color: rgb(80, 171, 204);
+            textarea{
+                display:inline-block;
+                width: 90%;
+                color:rgb(80, 171, 204);
+                font-size: 1.6rem;
+                border: 1px solid $userEdit-color;
+                margin-top: 1.2rem;
+                &:focus{
+                    outline:none;
+                    box-shadow:0 0 4px 1px $userEdit-color;
+                }
+            }
+        }
+        .userEdit__Rdetail--active{
+            opacity:1;
+            z-index:2;
+        }
+        .userEdit__Rcount{
+            // display:block;
+            height:14rem;
+            z-index:1;
+            background-color:rgb(173, 104, 134);
+            .userEdit__Rcount__select{
+                margin-top: 1.4rem;
+                width:50%;
+                height:3rem;
+                font-size: 1.6rem;
+                background-color:#fff;
+                position:relative;
+            }
+        }
+        .userEdit__Rcount--active{
+            opacity:1;
+            z-index:2;
+        }
+        .userEdit__Rdate{
+            // display:block;
+            height:13rem;
+            z-index:1;
+            background-color:rgb(126, 211, 237);
+            .userEdit__Rdate__date{
+                margin-top: 1.8rem;
+                width:100%;
+                position:relative;
+                a{
+                    color:#fff;
+                }
+                .Rdate__dateInput{
+                    width:50%;
+                }
+            }
+        }
+        .userEdit__Rdate--active{
+            opacity:1;
+            z-index:2;
+        }
+        .userEdit__Rrule{
+            // display:block;
+            height:23rem;
+            z-index:1;
+            background-color:rgb(122, 163, 229);
+            textarea{
+                display:inline-block;
+                width: 90%;
+                color:rgb(122, 163, 229);
+                font-size: 1.6rem;
+                margin-top: 1rem;
+                &:focus{
+                    outline:none;
+                    box-shadow:0 0 4px 1px $userEdit-color;
+                }
+            }
+        }
+        .userEdit__Rrule--active{
+            opacity:1;
+            z-index:2;
+        }
+        .userEdit__Rsubmit{
+            // display:block;
+            height:14rem;
+            z-index:1;
+            background-color:rgb(168, 56, 93);
+            p{
+                .userEdit__Rsubmit__submit{
+                    color: #fff;
+                    border: 1px solid #fff;
+                    background-color: rgb(162, 126, 168);
+                    width: 13rem;
+                    height: 4rem;
+                }
+                .userEdit__Rsubmit__close{
+                    color: #d8d8d8;
+                }
+            }
+        }
+        .userEdit__Rsubmit--active{
+            opacity:1;
+            z-index:2;
+        }
+
     }
 
 }
