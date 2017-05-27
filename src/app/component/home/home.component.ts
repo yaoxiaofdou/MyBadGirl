@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
   // 设置list高度
   public setListHeight(){
     let height = document.body.clientHeight-50;
-    document.querySelector('.homelist').setAttribute('style','height:'+height+'px;overflow-y:scroll;');
+    document.querySelector('.homelist').setAttribute('style','height:'+height+'px;overflow-y:scroll;-webkit-overflow-scrolling:touch;');
     // console.log(document.body.clientHeight)
   }
 

@@ -65,7 +65,7 @@ export class PersonalComponent implements OnInit {
   setListHeight(){
     let height = document.body.clientHeight-(52+148);
     // LDetails__list
-    document.querySelector('.ctab_content').setAttribute('style','height:'+height+'px;overflow-y:scroll;');
+    document.querySelector('.ctab_content').setAttribute('style','height:'+height+'px;overflow-y:scroll;-webkit-overflow-scrolling:touch;');
     // console.log(document.body.clientHeight)
     
   }
