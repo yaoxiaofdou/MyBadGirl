@@ -64,17 +64,9 @@ export class HomeComponent implements OnInit {
     console.log(this.User)
     if(this.User){
       this.mybadgirl['isLogin'] = true;
-      // 调用正确弹窗
-      this.Girl = {
-        type : 'success',
-        content : '登陆成功',
-        show : true,
-      };
-      
     }else{
       this.mybadgirl['isLogin'] = false;
     }
-    
   }
 
   // 设置list高度

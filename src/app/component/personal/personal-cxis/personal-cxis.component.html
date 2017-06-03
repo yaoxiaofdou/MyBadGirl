@@ -1,18 +1,16 @@
 <div class="Personal__cxis">
-  <div class="Personal__cxis__Mask" style="background:url('src/images/cxis.jpeg')no-repeat;background-size:cover;filter: blur(10px);"></div>
+  <!--<div class="Personal__cxis__Mask" style="background:url('src/images/cxis.jpeg')no-repeat;background-size:cover;filter: blur(10px);"></div>-->
   <div class="Personal__cxis__content">
-    <div class="Personal__cxisPanel">
-      <div class="Personal__cxisli">
-        <h3>2017.04.28</h3>
-        <h5>湖边跑步</h5>
-        <p>每日完成5公里日常训练，坚持打卡。</p>
+    <!-- [ngStyle]="{'background-color':'rgba(' + item.color + ',0.4)'}" -->
+    <div class="Personal__cxisPanel" *ngFor="let item of personalCxis['listData'],let i = index;">
+      <div class="Personal__cxisMask" [ngStyle]="{'background':'url(src/images/' + item.images + '.png)'}"></div>
+      <div class="Personal__cxisli" [ngStyle]="{'background-color':'rgba(' + item.color + ',0.4)'}">
+        <h3>{{ item.beginDate }}</h3>
+        <h5>{{ item.name }}</h5>
+        <p>{{ item.target }}</p>
       </div>
-    </div>
-    <div class="Personal__cxisPanel">
-      <div class="Personal__cxisli">
-        <h3>2013.04.28</h3>
-        <h5>湖边跑步xxx</h5>
-        <p>每日完成500公里日常训练，坚持打卡。</p>
+      <div class="Personal__soon">
+        <i class="iconfont icon-dizhiguodu"></i>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 export class PersonalComponent implements OnInit {
 
   // 保存当前用户
-  private User:Object;
+  private User:Object = {};
 
   // 头部样式
   private headerCls:Boolean = false;
@@ -55,19 +55,19 @@ export class PersonalComponent implements OnInit {
     // console.log(this.User)
   }
 
-  // 获取当前用户数据
+  // 设置当前用户数据
   getUser(){
     let user = this.cookieService.getObject('MyBadGirl_LoginUser');
     this.userService.getThisUser(user['Id']);
   }
 
   // 设置list高度
+  // 页面不能动原因，数据渲染在设置高度后面，所以页面无法判断需要滚动
   setListHeight(){
     let height = document.body.clientHeight-(52+148);
     // LDetails__list
     document.querySelector('.ctab_content').setAttribute('style','height:'+height+'px;overflow-y:scroll;-webkit-overflow-scrolling:touch;');
-    // console.log(document.body.clientHeight)
-    
+    console.log(height)
   }
 
   // 监听滚动事件，给头部绑定动态样式

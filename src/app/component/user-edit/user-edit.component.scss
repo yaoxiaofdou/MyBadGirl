@@ -88,10 +88,9 @@
             opacity:0;
             width:20rem;
             position: absolute;
-            top: 0;
+            top: 10rem;
             left: 0;
             right: 0;
-            bottom: 0;
             margin: auto;
             z-index:2;
             text-align: center;
@@ -211,7 +210,7 @@
         }
         .userEdit__Rrule{
             // display:block;
-            height:23rem;
+            height:25rem;
             z-index:1;
             background-color:rgb(122, 163, 229);
             textarea{
@@ -232,19 +231,52 @@
         }
         .userEdit__Rsubmit{
             // display:block;
-            height:14rem;
+            word-wrap: break-word;
+            box-sizing: border-box;
+            width: 25rem;
+            top:6rem;
+            padding: 2rem;
             z-index:1;
             background-color:rgb(168, 56, 93);
-            p{
+            .userEdit__Rsubmit__li{
+                margin:0.5rem 0 0 0;
+                color:#fff;
+                font-size: 1.3rem;
+                text-align: left;
+                label{
+                    width: 32%;
+                    text-align: right;
+                    vertical-align: top;
+                }
+                span{
+                    text-align: center;
+                    display:inline-block;
+                    width:65%;
+                    a{
+                        display:inline-block;
+                        width: 5rem;
+                        height: 2rem;
+                    }
+                }
+                .userEdit__Rsubmit__li__Rrule{
+                    max-height: 6rem;
+                    overflow-y: scroll;
+                }
+            }
+            .userEdit__Rsubmit__btn{
                 .userEdit__Rsubmit__submit{
+                    margin-top:2rem;
                     color: #fff;
                     border: 1px solid #fff;
                     background-color: rgb(162, 126, 168);
                     width: 13rem;
                     height: 4rem;
+                    font-size: 1.3rem;
                 }
                 .userEdit__Rsubmit__close{
+                    margin-top:1rem;
                     color: #d8d8d8;
+                    font-size: 1.3rem;
                 }
             }
         }

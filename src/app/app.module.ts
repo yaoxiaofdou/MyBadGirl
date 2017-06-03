@@ -28,13 +28,17 @@ import { PersonalCxisComponent } from './component/personal/personal-cxis/person
 // user edit
 import { UserEditComponent } from './component/user-edit/user-edit.component';
 
+// login register
+import { LoginComponent } from './component/login/login.component';
+
 // server
 import { HomeListDataService } from './server/home-list-data.service';
 import { UserService } from './server/user.service';
 
 // pipe
 import { HomeListPipe } from './pipes/home-list.pipe';
-import { LoginComponent } from './component/login/login.component';
+import { MyedittaskPipe } from './pipes/myedittask.pipe';
+
 
 // cookie
 import { CookieService } from 'angular2-cookie/services/cookies.service';
@@ -50,6 +54,7 @@ import { AlertComponent } from './public/alert/alert.component';
 
 // rxjs
 import './rxjs-operators';
+
 
 @NgModule({
   imports: [
@@ -73,7 +78,8 @@ import './rxjs-operators';
     UserEditComponent,
     LoginComponent,
     MAlertDirective,
-    AlertComponent
+    AlertComponent,
+    MyedittaskPipe
   ],
   providers: [HomeListDataService,UserService,CookieService],
   bootstrap: [AppComponent]

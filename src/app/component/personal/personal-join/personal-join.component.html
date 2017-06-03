@@ -1,24 +1,24 @@
 <!-- 我加入 -->
 <div class="LDetails__list">
   <!-- 活动li -->
-  <div class="LDetails__li" *ngFor="let item of dataList,let i = index;">
+  <div class="LDetails__li" *ngFor="let item of personalJoin['listData'],let i = index;">
     <!-- 活动背景 -->
     <div class="LDetails__liMask">
-      <img [src]="item.images" alt="img"/>
+      <img [src]=" 'src/images/' + item.images + '.png' " alt="img"/>
     </div>
     <!-- 活动内容 -->
     <div class="LDetails__liContent" [ngStyle]="{'background-color':'rgba(' + item.color + ',0.4)'}">
       <h3 class="LDetails__liContent__h">{{ item.name }}</h3>
-      <p class="LDetails__liContent__target" [ngStyle]="{'background-color':'rgba(' + item.color + ',1)'}">{{ item.target }}</p>
+      <p class="LDetails__liContent__target" [ngStyle]="{'background-color':'rgba(' + item.color + ',0.4)'}">{{ item.target }}</p>
       <div class="LDetails__liContent__user">
         <img src="src/images/rn.jpg" alt="face"/>
         {{ item.user }}
         <div class="LDetails__liContent__btn">
           <div class="liContent__btn__see">
-            <i class="iconfont icon-chakan" [ngStyle]="{'color':'rgba(' + item.color + ',1)'}"></i>
+            <i class="iconfont icon-chakan" (click)="joinLiDetail(item)" [ngStyle]="{'color':'rgba(' + item.color + ',1)'}"></i>
           </div>
           <div class="liContent__btn__giveup">
-            <i class="iconfont icon-shiliangzhinengduixiang4" [ngStyle]="{'color':'rgba(' + item.color + ',1)'}"></i>
+            <i class="iconfont icon-cha" (click)="removeJoinLi(item)" [ngStyle]="{'color':'rgba(' + item.color + ',1)'}"></i>
           </div>
         </div>
       </div>

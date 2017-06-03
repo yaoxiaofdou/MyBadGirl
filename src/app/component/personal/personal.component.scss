@@ -60,6 +60,8 @@
                 left:2rem;
                 z-index:2;
                 letter-spacing: 3px;
+                transition:0.7s;
+                background-color:rgba(255,255,255,0.7);
                 p{
                     font-size: 1.2rem;
                     margin:0;
@@ -80,6 +82,8 @@
                 right:2rem;
                 z-index:2;
                 letter-spacing: 3px;
+                transition:0.7s;
+                background-color:rgba(255,255,255,0.7);
                 p{
                     font-size: 1.2rem;
                     margin:0;
@@ -119,6 +123,8 @@
                 letter-spacing: 2px;
                 position: relative;
                 z-index:2;
+                padding: 1.9rem 0 0 0;
+                text-shadow: 2px 2px 2px #464a4c;
                 color: $personal_text_Color;
                 transition:0.7s;
             }
@@ -126,38 +132,12 @@
         .Personal__CFName--scroll{
             height:8rem;
             .Personal__CFName__join{
-                z-index: 9;
-                top: 8rem;
-                left: 33%;
-                width: 1.5rem;
-                height: 1.5rem;
-                border-radius: 50%;
-                background-color: $personal_text_Color;
-                p{
-                    display: none;
-                }
-                h5{
-                    font-size: 1rem;
-                    line-height: 1.5rem;
-                    color:#fff;
-                }
+                top: 1rem;
+                left: 0;
             }
             .Personal__CFName__edit{
-                z-index: 9;
-                top: 8rem;
-                left: 56%;
-                width: 1.5rem;
-                height: 1.5rem;
-                border-radius: 50%;
-                background-color: $personal_text_Color;
-                p{
-                    display: none;
-                }
-                h5{
-                    font-size: 1.25rem;
-                    line-height: 1.5rem;
-                    color:#fff;
-                }
+                top: 1rem;
+                right: 0;
             }
             .Personal__CFName__face{
                 position: absolute;

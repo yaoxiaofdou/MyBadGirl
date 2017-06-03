@@ -1,7 +1,8 @@
 <div class="homelist">
   <div class="homelist__li" *ngFor="let homeLi of listData | listCls : HomeCls ;let i = index;" (click)="hrefDetailsFun(homeLi);">
     <div class="homelist__liMask">
-      <img [src]="homeLi.images" alt="活动图片" />
+      src/images/1.png
+      <img [src]=" 'src/images/' + homeLi.images + '.png' " alt="活动图片" />
     </div>
     <div class="homelist__liContent" [ngStyle]="{'background-color':'rgba(' + homeLi.color + ',0.5)'}">
       <div class="homelist__Header">

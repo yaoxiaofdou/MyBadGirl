@@ -3,10 +3,9 @@
   <div class="userEdit__header">
     <!-- 返回首页 -->
     <i class="iconfont icon-shiliangzhinengduixiang4 userEdit__back" [routerLink]="['/home']"></i>
-    <!-- 编辑页跳转 -->
-    <a class="userEdit__edit" [routerLink]="['/personal']">发布</a>
   </div>
 
+  <!-- 发布任务：先走弹窗流程，之后如果点击的是确定发布，则在页面显示 -->
   <div class="userEdit__content">
     <div class="userEdit__mask"></div>
     <!-- 创建按钮 -->
@@ -20,23 +19,23 @@
         <option *ngFor="let rct of userEdit['cls']"
                   [value]="rct['name']">{{ rct['name'] }}</option>
       </select>
-      <p (click)="reduceZIndexFun()">
+      <p (click)="reduceZIndexFun(SubmttObj['cls'])">
         下一步
       </p>
     </div>
     <!-- 任务名 -->
     <div class="userEdit__Rname userEdit__public" [ngClass]="{'userEdit__Rname--active': userEdit['zIndex'] == 6 }">
       <h3>任务名</h3>
-      <input type="text" name="Rname" />
-      <p (click)="reduceZIndexFun()">
+      <input type="text" name="Rname" [(ngModel)]="SubmttObj['Rname']" />
+      <p (click)="reduceZIndexFun(SubmttObj['Rname'])">
         下一步
       </p>
     </div>
     <!-- 任务介绍 -->
     <div class="userEdit__Rdetail userEdit__public"  [ngClass]="{'userEdit__Rdetail--active': userEdit['zIndex'] == 5 }">
       <h3>任务介绍</h3>
-      <textarea name="Rdetail" cols="30" rows="3"></textarea>
-      <p (click)="reduceZIndexFun()">
+      <textarea name="Rdetail" cols="30" rows="3" [(ngModel)]="SubmttObj['Rdetail']"></textarea>
+      <p (click)="reduceZIndexFun(SubmttObj['Rdetail'])">
         下一步
       </p>
     </div>
@@ -47,7 +46,7 @@
         <option *ngFor="let rct of userEdit['Rcount']"
                   [value]="rct['name']">{{ rct['name'] }}</option>
       </select>
-      <p (click)="reduceZIndexFun()">
+      <p (click)="reduceZIndexFun(SubmttObj['Rcount'])">
         下一步
       </p>
     </div>
@@ -55,28 +54,55 @@
     <div class="userEdit__Rdate userEdit__public" [ngClass]="{'userEdit__Rdate--active': userEdit['zIndex'] == 3 }">
       <h3>活动时间</h3>
       <div class="userEdit__Rdate__date">
-        <a>2017-05-27 &nbsp; - &nbsp;</a><input type="date" class="Rdate__dateInput"/>
+        <a>2017-05-27 &nbsp; - &nbsp;</a><input type="date" class="Rdate__dateInput" [(ngModel)]="SubmttObj['Rdate']" />
       </div>
-      <p (click)="reduceZIndexFun()">
+      <p (click)="reduceZIndexFun(SubmttObj['Rdate'])">
         下一步
       </p>
     </div>
     <!-- 活动规则 -->
     <div class="userEdit__Rrule userEdit__public" [ngClass]="{'userEdit__Rrule--active': userEdit['zIndex'] == 2 }">
       <h3>活动规则</h3>
-      <textarea name="Rdetail" cols="30" rows="5"></textarea>
-      <p (click)="reduceZIndexFun()">
+      <textarea name="Rrule" cols="30" rows="5" [(ngModel)]="SubmttObj['Rrule']"></textarea>
+      <p (click)="reduceZIndexFun(SubmttObj['Rrule'])">
         下一步
       </p>
+      <span> * 每一条规则以逗号(中文逗号)结尾</span>
     </div>
-    <!-- 确认发布，取消 -->
+    <!-- 最后的信息确认弹窗，里面有用户所填的所有信息，用户可以选择 确认发布 或者选择 取消 -->
     <div class="userEdit__Rsubmit userEdit__public" [ngClass]="{'userEdit__Rsubmit--active': userEdit['zIndex'] == 1 }">
-      <p>
-        <input type="button" value="确定发布" class="userEdit__Rsubmit__submit" />
-      </p>
-      <p (click)="userEdit['zIndex']=8;">
-        <input type="button" value="取消" class="userEdit__Rsubmit__close" />
-      </p>
+      <div>
+        <div class="userEdit__Rsubmit__li">
+          <label>分类&nbsp;:</label> <span>{{ SubmttObj['cls'] }}</span> 
+        </div>
+        <div class="userEdit__Rsubmit__li">
+          <label>任务名&nbsp;:</label> <span style="max-height:3rem;overflow-y:scroll;">{{ SubmttObj['Rname'] }}</span> 
+        </div>
+        <div class="userEdit__Rsubmit__li">
+          <label>任务介绍&nbsp;:</label> <span style="max-height:6rem;overflow-y:scroll;">{{ SubmttObj['Rdetail'] }}</span> 
+        </div>
+        <div class="userEdit__Rsubmit__li">
+          <label>统计方法&nbsp;:</label> <span>{{ SubmttObj['Rcount'] }}</span> 
+        </div>
+        <div class="userEdit__Rsubmit__li">
+          <label>活动时间&nbsp;:</label> <span>{{ SubmttObj['Rdate'] }}</span> 
+        </div>
+        <div class="userEdit__Rsubmit__li">
+          <label>幸运色&nbsp;:</label> 
+          <span>
+            <a (click)="changeSubmttObjColor()" [ngStyle]="{'background-color':'rgb(' + SubmttObj['Rcolor'] + ')'}"></a>
+          </span> 
+        </div>
+        <div class="userEdit__Rsubmit__li">
+          <label>活动规则&nbsp;:</label> <span class="userEdit__Rsubmit__li__Rrule">{{ SubmttObj['Rrule'] }}</span> 
+        </div>
+      </div>
+      <div class="userEdit__Rsubmit__btn">
+        <input type="button" value="确认发布" class="userEdit__Rsubmit__submit" (click)="submitCreateTask()" />
+      </div>
+      <div class="userEdit__Rsubmit__btn">  
+        <input type="button" value="取消" class="userEdit__Rsubmit__close" (click)="userEdit['zIndex']=8;" />
+      </div>
     </div>
   </div>
 
@@ -135,3 +161,6 @@
   </div>
 
 </div>
+
+<!-- 弹窗组件 -->
+<app-alert [(Girl)]="Girl"></app-alert>

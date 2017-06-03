@@ -101,18 +101,21 @@
                         justify-content: center;
                         //background-color:#999;
                         color: #999;
-                        i{
-                            font-size: 2rem;
-                        }
                     }
                     .liContent__btn__see{
                         position: absolute;
                         right: 6rem;
                         border-left: 1px solid #efefef;
+                        i{
+                            font-size: 2.5rem;
+                        }
                     }
                     .liContent__btn__giveup{
                         position: absolute;
                         right: 2rem;
+                        i{
+                            font-size:1.8rem;
+                        }
                     }
                 }
             }

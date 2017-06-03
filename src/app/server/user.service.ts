@@ -167,9 +167,69 @@ export class UserService {
             img : 'src/images/1.png',
             name : name,
             joinSum : 0,
-            editSum : 0
+            editSum : 0,
+            joinTaskList : [],
           });
         }
+    });
+  }
+
+  // 返回当前时间
+  getNowFormatDate(){ 
+    let day = new Date(); 
+    let Year = 0; 
+    let Month = 0; 
+    let Day = 0; 
+    let CurrentDate = ""; 
+    //初始化时间 
+    //Year= day.getYear();//有火狐下2008年显示108的bug 
+    Year= day.getFullYear();//ie火狐下都可以 
+    Month= day.getMonth()+1; 
+    Day = day.getDate(); 
+    //Hour = day.getHours(); 
+    // Minute = day.getMinutes(); 
+    // Second = day.getSeconds(); 
+    CurrentDate += Year + "-"; 
+    if (Month >= 10 ){ 
+      CurrentDate += Month + "-"; 
+    }else{ 
+      CurrentDate += "0" + Month + "-"; 
+    }if (Day >= 10 ){ 
+      CurrentDate += Day ; 
+    }else{ 
+      CurrentDate += "0" + Day ; 
+    }
+    return CurrentDate;
+  }
+
+  // 删除用户指定活动方法
+  removeWilddogJoinTaskFun(task,user){
+    // 返回当前时间
+    let date = this.getNowFormatDate();
+    // 获取 wilddog 链接
+    const ref = this.LinkWilddog();
+    // console.log(task['id'])
+    // console.log(user['Id'])
+    // 删除用户中的加入活动数据
+    ref.child('UserPersonal').child(user['Id']).child('joinTaskList').child(task['id']).remove();
+    // 删除活动中的用户加入数据
+    ref.child('MyBadGirl-Task').child(task['id']).child('joinUser').child(user['Id']).remove();
+    // 更新当前用户删除的活动总数
+    ref.child('UserPersonal').child(user['Id']).child('joinSum').once('value').then((snapshot)=>{
+      let sum = snapshot.val();
+      ref.child('UserPersonal').child(user['Id']).update({
+        joinSum: sum - 1
+      });
+      // 更新服务中用户的数据
+      this.User['joinSum'] = sum - 1;
+    });
+    // 删除用户 在当前活动中排名的数据
+    ref.child('MyBadGirl-Task').child(task['id']).child('Ranking').child(user['Id']).remove();
+    // 更新动态,推入最新动态
+    ref.child('MyBadGirl-Task').child(task['id']).child('dynamic').push({
+      date: date,
+      name: user['name'],
+      dynamic: '退出了该《' + task['cls'] + '》'
     });
   }
 
@@ -197,6 +257,29 @@ export class UserService {
     return this.User
   }
 
+  // 删除用户列表方法
+  public removeUserJoinTaskList(task){
+    // 重新获取列表数据
+    let arr = this.User['joinTaskList'];
+    arr.forEach((item,index)=>{
+      if(item['id']==task['id']){
+        arr.splice(index,1);
+      }
+    });
+    // console.log(arr)
+    this.User['joinTaskList'] = arr;
+    return this.User['joinTaskList']
+  }
+
+  // 获取到的野狗数据对象转换成数组
+  public changeJoinArray(obj){
+    let arr = [];
+    for(let i in obj){
+      arr.unshift(obj[i])
+    }
+    return arr
+  }
+
   // 返回当前用户数据 :Promise<user>
   public getThisUser(id){
   
@@ -215,6 +298,8 @@ export class UserService {
     ref.once('value').then((snapshot)=>{
       console.log(snapshot.val());
       this.User = snapshot.val();
+      // 把野狗返回的列表对象改成列表数组
+      this.User['joinTaskList'] = this.changeJoinArray(this.User['joinTaskList']);
     }).catch(function(err){
       console.info(err);
     });
