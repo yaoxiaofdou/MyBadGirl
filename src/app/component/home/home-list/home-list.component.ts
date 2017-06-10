@@ -24,7 +24,7 @@ export class HomeListComponent implements OnInit {
     // 获取服务列表数据
     this.getListServerData();
   }
-  
+
   // 当从主页传递过来的分类有变化时调用
   ngOnChanges(){
     // console.log('list',this.HomeCls)
@@ -37,6 +37,7 @@ export class HomeListComponent implements OnInit {
 
   // 跳转详情页
   hrefDetailsFun(li){
+    console.log(li)
     this.router.navigate(['/detail',li['id']]);
   }
 

@@ -1,6 +1,13 @@
 <div class="MyBadGirlAlert"
-    [ngClass]="{ 'successAlert' : Girl['type'] == 'success' , 'dangerAlert' : Girl['type'] == 'danger' ,'warningAlert' : Girl['type'] == 'warning' , 'alertShow' : Girl['show']}" 
+    [ngClass]="{ 'successAlert' : Girl['type'] == 'success' ,
+                 'dangerAlert' : Girl['type'] == 'danger' ,
+                 'warningAlert' : Girl['type'] == 'warning' , 
+                 'alertShow' : Girl['show'],
+                 'alert-center' : Girl['direction'] == 'center',
+                 'alert-bottom' : Girl['direction'] == 'bottom'
+                }" 
     *ngIf="Girl['show']"
-    (click)="closeAlert()">
+    (click)="closeAlert()"
+    >
     {{ Girl['content'] }}
 </div>

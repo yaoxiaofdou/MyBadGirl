@@ -11,7 +11,7 @@
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom:0;
     margin: auto;
     z-index: 12;
     color: #fff;
@@ -21,6 +21,13 @@
     text-overflow: ellipsis;
     transition:0.7s;
 }
+.alert-center{
+    top:0;
+}
+.alert-bottom{
+    bottom:0;
+}
+
 .successAlert{
     background-color:#83d483;
     box-shadow: 0px 0px 10px 2px #83d483;

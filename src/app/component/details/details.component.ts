@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HomeListDataService } from '../../server/home-list-data.service';
 import { UserService } from '../../server/user.service';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
@@ -16,7 +16,11 @@ export class DetailsComponent implements OnInit {
   // 保存当前活动
   private activity:Object = {};
 
+  // 弹窗类型对象
+  public Girl:Object = {};
+
   constructor(
+    private _router:Router,
     private router:ActivatedRoute,
     private homeListServer:HomeListDataService,
     private userService:UserService,
@@ -91,41 +95,59 @@ export class DetailsComponent implements OnInit {
     for(let i in Ulist){
       uArray.push(Ulist[i])
     }
-    // 获取当前用户
+    // 获取当前用户,   这个地方会报错，用户没登陆没办法判断是否加入活动，加个验证，如果没有用户就省略该判断
     let user = this.User;
-    // 判断当前用户是否有加入该活动
-    uArray.forEach((item,index) => {
-      if(item['id'] == user['Id']){
-        // true 说明该用户已经加入了该活动
-        this.activity['changeBtn'] = 2;
-      }
-    });
-    // console.log(this.activity['changeBtn'])
+    if(user){
+      // 判断当前用户是否有加入该活动
+      uArray.forEach((item,index) => {
+        if(item['id'] == user['Id']){
+          // true 说明该用户已经加入了该活动
+          this.activity['changeBtn'] = 2;
+        }
+      });
+      // console.log(this.activity['changeBtn'])
+    }
   }
 
   // 加入任务方法
   joinTaskFun(task){
-    // true 说明该用户已经加入了该活动
-    this.activity['changeBtn'] = true;
-    // 获取当前登陆的用户数据
-    let user = {
-      id: this.cookieService.getObject('MyBadGirl_LoginUser')['Id'],
-      name:this.cookieService.getObject('MyBadGirl_LoginUser')['account']
+    // 加个判断，如果当前用户没有登陆，就提示未登陆，跳转到登陆页
+    if(this.User){
+      // true 说明该用户已经加入了该活动
+      this.activity['changeBtn'] = true;
+      // 获取当前登陆的用户数据
+      let user = {
+        id: this.cookieService.getObject('MyBadGirl_LoginUser')['Id'],
+        name:this.cookieService.getObject('MyBadGirl_LoginUser')['account']
+      }
+      // 新建一个需要的任务对象
+      let taskObj = {
+        id: task['id'],
+        cls: task['cls'],
+        uid: task['uid'],
+        name: task['name'],
+        user: task['user'],
+        date: task['date'],
+        images: task['images'],
+        target: task['target'],
+        color: task['color']
+      };
+      // 通过服务更新野狗
+      this.homeListServer.setWilddogJoinTaskFun(taskObj,user);
+    }else{
+      // 调用正确弹窗
+      this.Girl = {
+        direction : 'center',
+        type : 'danger',
+        content : '请登陆后执行该操作',
+        show : true,
+      };
+      // 未登陆跳转到登陆页
+      setTimeout(()=>{
+        this._router.navigate(['/login']);
+      },2000)
+      
     }
-    // 新建一个需要的任务对象
-    let taskObj = {
-      id: task['id'],
-      cls: task['cls'],
-      uid: task['uid'],
-      name: task['name'],
-      user: task['user'],
-      date: task['date'],
-      images: task['images'],
-      target: task['target'],
-      color: task['color']
-    };
-    // 通过服务更新野狗
-    this.homeListServer.setWilddogJoinTaskFun(taskObj,user);
   }
 
 }

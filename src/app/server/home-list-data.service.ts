@@ -203,15 +203,15 @@ export class HomeListDataService {
     })
     console.log(detail);
     this.listdetail = detail;
-    // 反转数组
+    // 反转排名数组
     let arr = [];
     for(let i in this.listdetail['dynamic']){
       arr.unshift(this.listdetail['dynamic'][i]);
     }
     this.listdetail['dynamic'] = arr;
-    // 整合排名
-    this.listdetail['Ranking'] = this.setHomeListDetailRanking(this.listdetail['Ranking'])
-    
+    // 整合排名数组
+    this.listdetail['Ranking'] = this.setHomeListDetailRanking(this.listdetail['Ranking']);
+
     return this.listdetail;
   }
 

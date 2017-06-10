@@ -8,6 +8,7 @@
 *      public Girl:Object = {}; // 弹窗类型对象初始化
 *     // 调用弹窗
       this.Girl = {
+        direction:'top',                   // 两种类型：top and bottom , default bottom
         type : 'danger',                   // 三种类型的框  success danger warning
         content : '账号密码错误,请重新输入',   // 弹窗的提示内容
         show : true,                       // 控制弹窗的显示与隐藏
